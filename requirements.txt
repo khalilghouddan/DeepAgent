@@ -1,0 +1,8 @@
+deepagents
+langchain-core
+langchain-openai
+httpx
+markdownify
+python-dotenv
+rich
+typing-extensions

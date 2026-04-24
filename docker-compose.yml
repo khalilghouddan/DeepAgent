@@ -1,0 +1,31 @@
+services:
+  searxng:
+    image: searxng/searxng:latest
+    restart: unless-stopped
+    expose:
+      - "8080"
+    volumes:
+      - ./searxng/settings.yml:/etc/searxng/settings.yml
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: deep-agent/deep-agent:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      SEARXNG_URL: http://searxng:8080/search
+      SOURCES_JSON_PATH: /app/outputs/sources_history.json
+    volumes:
+      - ./outputs:/app/outputs
+    depends_on:
+      searxng:
+        condition: service_healthy
+    command: ["python", "deep_research_searxng.py", "--query", "${QUERY:-test query}"]

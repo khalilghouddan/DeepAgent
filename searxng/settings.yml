@@ -1,0 +1,14 @@
+use_default_settings: true
+
+general:
+  instance_name: "deep-agent-searxng"
+
+server:
+  bind_address: "0.0.0.0"
+  port: 8080
+  secret_key: "deep-agent-searxng-local-dev-20260423"
+
+search:
+  formats:
+    - html
+    - json
