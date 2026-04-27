@@ -1,7 +1,7 @@
 """Standalone script version of deep_research_searxng.ipynb.
 
 Usage:
-    python deep_research_searxng.py --query "What are the latest features of OpenAI?"
+    python deep_research_searxng.py --query "What are the latest features of OpenAI?" --search-language any
 """
 
 from __future__ import annotations
@@ -42,13 +42,25 @@ def build_agent(
     model_name: str,
     max_concurrent_research_units: int = 1,
     max_researcher_iterations: int = 1,
+    search_date: str | None = None,
+    response_language: str = "any",
 ):
-    current_date = datetime.now().strftime("%Y-%m-%d")
+    if not search_date:
+        search_date = datetime.now().strftime("%Y-%m-%d")
+
+    language = (response_language or "any").strip().lower()
+    language_instruction = ""
+    if language not in {"", "any", "all", "*"}:
+        language_instruction = (
+            "\n\nOutput language requirement: "
+            f"write the final answer strictly in '{language}'."
+        )
 
     research_sub_agent = {
         "name": "research-agent",
         "description": "Delegate research to the sub-agent researcher.",
-        "system_prompt": RESEARCHER_INSTRUCTIONS.format(date=current_date),
+        "system_prompt": RESEARCHER_INSTRUCTIONS.format(date=search_date)
+        + language_instruction,
         "tools": [searxng_search, think_tool],
     }
 
@@ -61,6 +73,7 @@ def build_agent(
             max_concurrent_research_units=max_concurrent_research_units,
             max_researcher_iterations=max_researcher_iterations,
         )
+        + language_instruction
     )
 
     model = ChatOpenAI(
@@ -128,6 +141,22 @@ def parse_args() -> argparse.Namespace:
         default=os.getenv("SOURCES_JSON_PATH", "outputs/sources_history.json"),
         help="Path to append returned search sources as JSON history.",
     )
+    parser.add_argument(
+        "--search-language",
+        default=os.getenv("SEARXNG_LANGUAGE", "any"),
+        help=(
+            "SearXNG language filter. Use 'any' for multilingual results, "
+            "or a specific code like 'en', 'fr', 'ar'."
+        ),
+    )
+    parser.add_argument(
+        "--search-date",
+        default="",
+        help=(
+            "Optional date override for prompts in YYYY-MM-DD format. "
+            "Defaults to today's date."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -136,6 +165,7 @@ def main() -> None:
     args = parse_args()
     configure_logging(args.log_level)
     os.environ["SOURCES_JSON_PATH"] = args.sources_json
+    os.environ["SEARXNG_LANGUAGE"] = args.search_language
 
     if not args.api_key:
         raise ValueError(
@@ -149,6 +179,7 @@ def main() -> None:
         model_name=args.model,
         max_concurrent_research_units=args.max_concurrent_research_units,
         max_researcher_iterations=args.max_researcher_iterations,
+        search_date=args.search_date,
     )
 
     logger.info("Invoking agent with query: %s", args.query)

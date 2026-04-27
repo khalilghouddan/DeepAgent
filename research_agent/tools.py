@@ -11,6 +11,7 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 import httpx
 from langchain_core.tools import InjectedToolArg, tool
@@ -18,6 +19,41 @@ from markdownify import markdownify
 from typing_extensions import Annotated
 
 logger = logging.getLogger(__name__)
+
+
+def _build_candidate_searxng_urls() -> list[str]:
+    """Return candidate SearXNG URLs that work in Docker and local runs."""
+    configured = os.getenv("SEARXNG_URL", "").strip()
+    default_url = "http://searxng:8080/search"
+
+    candidates: list[str] = []
+    if configured:
+        candidates.append(configured)
+    else:
+        candidates.append(default_url)
+
+    primary = candidates[0]
+    parsed = urlsplit(primary)
+    if parsed.hostname == "searxng":
+        for host in ("localhost", "127.0.0.1"):
+            fallback = urlunsplit(
+                (
+                    parsed.scheme or "http",
+                    f"{host}:{parsed.port or 8080}",
+                    parsed.path or "/search",
+                    parsed.query,
+                    parsed.fragment,
+                )
+            )
+            candidates.append(fallback)
+
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for url in candidates:
+        if url not in seen:
+            seen.add(url)
+            deduped.append(url)
+    return deduped
 
 
 def _save_sources_json(query: str, sources: list[dict[str, Any]]) -> None:
@@ -99,14 +135,14 @@ def searxng_search_request(
 ) -> dict:
     """Call SearXNG API and return results."""
 
-    url = os.getenv("SEARXNG_URL", "http://searxng:8080/search")
-
     params = {
         "q": query,
         "format": "json",
-        "language": "en",
     }
-    # SearXNG's bot detection can require client IP headers even on internal networks.
+    language = os.getenv("SEARXNG_LANGUAGE", "any").strip().lower()
+    if language not in {"", "any", "all", "*"}:
+        params["language"] = language
+        
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (X11; Linux x86_64) "
@@ -118,15 +154,24 @@ def searxng_search_request(
         "X-Real-IP": "127.0.0.1",
     }
 
-    try:
-        logger.debug("Calling SearXNG search API for query: %s", query)
-        response = httpx.get(url, params=params, headers=headers, timeout=20.0)
-        response.raise_for_status()
-        return response.json()
+    errors: list[str] = []
+    for url in _build_candidate_searxng_urls():
+        try:
+            logger.debug("Calling SearXNG search API for query='%s' url='%s'", query, url)
+            response = httpx.get(url, params=params, headers=headers, timeout=20.0)
+            response.raise_for_status()
+            return response.json()
+        except Exception as e:
+            errors.append(f"{url} -> {e}")
+            logger.warning("SearXNG request failed at %s: %s", url, e)
 
-    except Exception as e:
-        logger.exception("SearXNG search failed for query: %s", query)
-        raise ValueError(f"SearXNG search failed: {str(e)}")
+    logger.error("SearXNG search failed for query='%s' after trying all URLs", query)
+    raise ValueError(
+        "SearXNG search failed. Tried URLs: "
+        + "; ".join(_build_candidate_searxng_urls())
+        + ". Last errors: "
+        + " | ".join(errors)
+    )
 
 
 # -----------------------------

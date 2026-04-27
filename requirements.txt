@@ -6,3 +6,5 @@ markdownify
 python-dotenv
 rich
 typing-extensions
+fastapi
+uvicorn

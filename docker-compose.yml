@@ -12,7 +12,7 @@ services:
       timeout: 5s
       retries: 10
 
-  app:
+  api:
     build:
       context: .
       dockerfile: Dockerfile
@@ -28,4 +28,19 @@ services:
     depends_on:
       searxng:
         condition: service_healthy
-    command: ["python", "deep_research_searxng.py", "--query", "${QUERY:-test query}"]
+    ports:
+      - "8000:8000"
+    command: ["uvicorn", "web_api:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: deep-agent/frontend:latest
+    restart: unless-stopped
+    environment:
+      VITE_API_PROXY_TARGET: http://api:8000
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api

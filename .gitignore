@@ -3,3 +3,7 @@ env/
 __pycache__/
 .git/
 .env
+.codex
+.dckerignore
+frontend/node_modules/
+frontend/dist/

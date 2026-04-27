@@ -27,6 +27,7 @@ pip install -r requirements.txt
 OPENAI_MODEL=gpt-4o-mini
 OPENAI_API_KEY=your_openai_key_here
 OPENAI_BASE_URL=
+SEARXNG_LANGUAGE=any
 MAX_CONCURRENT_RESEARCH_UNITS=1
 MAX_RESEARCHER_ITERATIONS=1
 LOG_LEVEL=INFO
@@ -35,6 +36,9 @@ LOG_LEVEL=INFO
 Notes:
 - Leave `OPENAI_BASE_URL` empty for official OpenAI API.
 - `research_agent/tools.py` expects SearXNG at `http://localhost:8080/search`.
+- Set `SEARXNG_LANGUAGE=any` for multilingual results, or a specific code like `en`, `fr`, `ar`.
+- For local (non-Docker) runs, set `SEARXNG_URL=http://localhost:8080/search`.
+- For Docker Compose app service, `SEARXNG_URL=http://searxng:8080/search` is correct.
 
 ## Run
 
@@ -44,6 +48,7 @@ python deep_research_searxng.py --query "What are the latest OpenAI features com
 
 Useful options:
 - `--model gpt-4o-mini`
+- `--search-language any` (or `en`, `fr`, `ar`, ...)
 - `--log-level DEBUG`
 - `--max-concurrent-research-units 1`
 - `--max-researcher-iterations 1`
