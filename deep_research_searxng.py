@@ -20,7 +20,12 @@ from research_agent.prompts import (
     RESEARCH_WORKFLOW_INSTRUCTIONS,
     SUBAGENT_DELEGATION_INSTRUCTIONS,
 )
-from research_agent.tools import searxng_search, think_tool
+from research_agent.tools import (
+    crawl4ai_scrape_url,
+    crawl4ai_scrape_urls,
+    searxng_search,
+    think_tool,
+)
 from utils import format_messages
 
 logger = logging.getLogger(__name__)
@@ -61,7 +66,12 @@ def build_agent(
         "description": "Delegate research to the sub-agent researcher.",
         "system_prompt": RESEARCHER_INSTRUCTIONS.format(date=search_date)
         + language_instruction,
-        "tools": [searxng_search, think_tool],
+        "tools": [
+            searxng_search,
+            crawl4ai_scrape_urls,
+            crawl4ai_scrape_url,
+            think_tool,
+        ],
     }
 
     instructions = (
@@ -89,7 +99,12 @@ def build_agent(
     )
     return create_deep_agent(
         model=model,
-        tools=[searxng_search, think_tool],
+        tools=[
+            searxng_search,
+            crawl4ai_scrape_urls,
+            crawl4ai_scrape_url,
+            think_tool,
+        ],
         system_prompt=instructions,
         subagents=[research_sub_agent],
     )
@@ -161,7 +176,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
-    load_dotenv(".env", override=True)
+    load_dotenv(".env", override=False)
     args = parse_args()
     configure_logging(args.log_level)
     os.environ["SOURCES_JSON_PATH"] = args.sources_json

@@ -73,20 +73,23 @@ You can call these tools in series or in parallel, your research is conducted in
 </Task>
 
 <Available Research Tools>
-You have access to two specific research tools:
-1. **yahoo_search**: For conducting Yahoo-backed web searches to gather information
-2. **think_tool**: For reflection and strategic planning during research
-**CRITICAL: Use think_tool after each search to reflect on results and plan next steps**
+You have access to four specific research tools:
+1. **searxng_search**: Search with SearXNG and return candidate source URLs, titles, and snippets. This tool does not provide full page content.
+2. **crawl4ai_scrape_urls**: Scrape the URLs returned by searxng_search with Crawl4AI. Use this on every URL returned by searxng_search before writing findings.
+3. **crawl4ai_scrape_url**: Scrape one extra specific HTTP/HTTPS URL if you need to inspect an additional page.
+4. **think_tool**: For reflection and strategic planning during research.
+**CRITICAL: After each searxng_search call, call crawl4ai_scrape_urls with all URLs returned by searxng_search. Base your findings on the scraped Crawl4AI content, not only search snippets. Use think_tool after scraping to assess whether the scraped evidence is enough.**
 </Available Research Tools>
 
 <Instructions>
 Think like a human researcher with limited time. Follow these steps:
 
 1. **Read the question carefully** - What specific information does the user need?
-2. **Start with broader searches** - Use broad, comprehensive queries first
-3. **After each search, pause and assess** - Do I have enough to answer? What's still missing?
-4. **Execute narrower searches as you gather information** - Fill in the gaps
-5. **Stop when you can answer confidently** - Don't keep searching for perfection
+2. **Search first** - Use searxng_search with a broad, comprehensive query.
+3. **Scrape every returned URL** - Immediately pass all URLs from searxng_search to crawl4ai_scrape_urls.
+4. **Assess scraped evidence** - Use think_tool after scraping to decide whether the scraped pages answer the question.
+5. **Search again only for gaps** - If something is missing, run a narrower searxng_search and again scrape all returned URLs.
+6. **Stop when scraped sources are enough** - Don't keep searching for perfection.
 </Instructions>
 
 <Hard Limits>
@@ -102,8 +105,8 @@ Think like a human researcher with limited time. Follow these steps:
 </Hard Limits>
 
 <Show Your Thinking>
-After each search tool call, use think_tool to analyze the results:
-- What key information did I find?
+After each search-and-scrape cycle, use think_tool to analyze the results:
+- What key information did the scraped pages provide?
 - What's missing?
 - Do I have enough to answer the question comprehensively?
 - Should I search more or provide my answer?

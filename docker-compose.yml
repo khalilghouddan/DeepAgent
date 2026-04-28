@@ -12,22 +12,36 @@ services:
       timeout: 5s
       retries: 10
 
+  crawl4ai:
+    build:
+      context: /home/rihab/crawl4ai
+      dockerfile: Dockerfile
+    image: crawl4ai-crawl-api:local
+    restart: unless-stopped
+    expose:
+      - "8000"
+
   api:
     build:
       context: .
       dockerfile: Dockerfile
     image: deep-agent/deep-agent:latest
+    user: "${UID:-1000}:${GID:-1000}"
     restart: unless-stopped
     env_file:
       - .env
     environment:
       SEARXNG_URL: http://searxng:8080/search
+      CRAWL4AI_URL: ${CRAWL4AI_URL:-http://crawl4ai:8000}
+      CRAWL4AI_API_TOKEN: ${CRAWL4AI_API_TOKEN:-}
       SOURCES_JSON_PATH: /app/outputs/sources_history.json
     volumes:
       - ./outputs:/app/outputs
     depends_on:
       searxng:
         condition: service_healthy
+      crawl4ai:
+        condition: service_started
     ports:
       - "8000:8000"
     command: ["uvicorn", "web_api:app", "--host", "0.0.0.0", "--port", "8000"]

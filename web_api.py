@@ -99,7 +99,7 @@ def _serialize_process(messages: list[Any]) -> list[dict[str, str]]:
 
 @app.on_event("startup")
 def startup() -> None:
-    load_dotenv(".env", override=True)
+    load_dotenv(".env", override=False)
 
 
 @app.post("/api/research", response_model=ResearchResponse)

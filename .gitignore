@@ -3,6 +3,8 @@ env/
 __pycache__/
 .git/
 .env
+.env.*
+!.env.example
 .codex
 .dckerignore
 frontend/node_modules/

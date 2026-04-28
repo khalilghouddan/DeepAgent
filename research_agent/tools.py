@@ -8,6 +8,7 @@ using SearXNG for URL discovery and fetching full webpage content.
 import json
 import logging
 import os
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -19,6 +20,311 @@ from markdownify import markdownify
 from typing_extensions import Annotated
 
 logger = logging.getLogger(__name__)
+
+
+def _build_candidate_crawl4ai_urls() -> list[str]:
+    """Return candidate Crawl4AI API roots for Docker and local runs."""
+    configured = os.getenv("CRAWL4AI_URL", "").strip().rstrip("/")
+    if not configured:
+        return []
+
+    candidates = [configured]
+    parsed = urlsplit(configured)
+    if parsed.hostname in {"crawl4ai", "host.docker.internal"}:
+        port = parsed.port or 11235
+        for host in ("host.docker.internal", "localhost", "127.0.0.1"):
+            fallback = urlunsplit(
+                (
+                    parsed.scheme or "http",
+                    f"{host}:{port}",
+                    parsed.path.rstrip("/"),
+                    "",
+                    "",
+                )
+            ).rstrip("/")
+            candidates.append(fallback)
+
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for url in candidates:
+        if url and url not in seen:
+            seen.add(url)
+            deduped.append(url)
+    return deduped
+
+
+def _crawl4ai_headers() -> dict[str, str]:
+    token = os.getenv("CRAWL4AI_API_TOKEN", "").strip()
+    if not token:
+        return {}
+    return {"Authorization": f"Bearer {token}"}
+
+
+def _crawl4ai_scrape_paths() -> list[str]:
+    configured = os.getenv("CRAWL4AI_SCRAPE_PATH", "").strip()
+    candidates = [configured] if configured else []
+    candidates.extend(["/scrape", "/crawl"])
+
+    paths: list[str] = []
+    seen: set[str] = set()
+    for path in candidates:
+        if not path:
+            continue
+        normalized = path if path.startswith("/") else f"/{path}"
+        if normalized not in seen:
+            seen.add(normalized)
+            paths.append(normalized)
+    return paths
+
+
+def _extract_crawl4ai_markdown(payload: Any) -> str:
+    """Extract markdown from common Crawl4AI Docker response shapes."""
+    if isinstance(payload, list):
+        return "\n\n".join(
+            text
+            for item in payload
+            if (text := _extract_crawl4ai_markdown(item).strip())
+        )
+
+    if not isinstance(payload, dict):
+        return ""
+
+    for key in ("markdown", "markdown_v2", "fit_markdown"):
+        value = payload.get(key)
+        if isinstance(value, str):
+            return value
+        if isinstance(value, dict):
+            for nested_key in ("raw_markdown", "fit_markdown", "markdown"):
+                nested = value.get(nested_key)
+                if isinstance(nested, str):
+                    return nested
+
+    for key in ("result", "results", "data", "response"):
+        value = payload.get(key)
+        text = _extract_crawl4ai_markdown(value)
+        if text:
+            return text
+
+    for value in payload.values():
+        text = _extract_crawl4ai_markdown(value)
+        if text:
+            return text
+
+    return ""
+
+
+def _crawl4ai_task_id(payload: Any) -> str:
+    if not isinstance(payload, dict):
+        return ""
+    task_id = payload.get("task_id") or payload.get("id")
+    return str(task_id) if task_id else ""
+
+
+def _poll_crawl4ai_task(
+    client: httpx.Client,
+    base_url: str,
+    task_id: str,
+    timeout: float,
+) -> dict[str, Any]:
+    deadline = time.monotonic() + timeout
+    last_payload: dict[str, Any] = {}
+
+    while time.monotonic() < deadline:
+        for path in (f"/task/{task_id}", f"/crawl/job/{task_id}"):
+            response = client.get(f"{base_url}{path}")
+            if response.status_code == 404:
+                continue
+            response.raise_for_status()
+            payload = response.json()
+            if isinstance(payload, dict):
+                last_payload = payload
+                status = str(payload.get("status", "")).lower()
+                if status in {"completed", "complete", "done", "success", "finished"}:
+                    return payload
+                if _extract_crawl4ai_markdown(payload):
+                    return payload
+                if status in {"failed", "error"}:
+                    raise ValueError(payload.get("error") or payload)
+        time.sleep(1.0)
+
+    raise TimeoutError(f"Crawl4AI task {task_id} did not finish: {last_payload}")
+
+
+def fetch_webpage_content_with_crawl4ai(url: str, timeout: float = 60.0) -> str:
+    """Fetch a URL through a configured Crawl4AI Docker API."""
+    if urlsplit(url).scheme not in {"http", "https"}:
+        raise ValueError("Crawl4AI only accepts http:// and https:// URLs")
+
+    errors: list[str] = []
+    headers = _crawl4ai_headers()
+
+    for base_url in _build_candidate_crawl4ai_urls():
+        with httpx.Client(headers=headers, timeout=timeout) as client:
+            for path in _crawl4ai_scrape_paths():
+                try:
+                    logger.debug(
+                        "Calling Crawl4AI for url='%s' api='%s%s'",
+                        url,
+                        base_url,
+                        path,
+                    )
+                    if path == "/crawl":
+                        body: dict[str, Any] = {
+                            "urls": [url],
+                            "priority": 10,
+                        }
+                    else:
+                        body = {
+                            "url": url,
+                            "return_html": False,
+                            "timeout_ms": int(timeout * 1000),
+                            "headless": True,
+                        }
+
+                    response = client.post(f"{base_url}{path}", json=body)
+                    if response.status_code == 404:
+                        errors.append(f"{base_url}{path} -> 404 Not Found")
+                        continue
+                    response.raise_for_status()
+                    payload = response.json()
+
+                    if isinstance(payload, dict) and payload.get("success") is False:
+                        raise ValueError(payload.get("error") or payload)
+
+                    task_id = _crawl4ai_task_id(payload)
+                    if task_id and not _extract_crawl4ai_markdown(payload):
+                        payload = _poll_crawl4ai_task(
+                            client, base_url, task_id, timeout
+                        )
+
+                    markdown_text = _extract_crawl4ai_markdown(payload).strip()
+                    if markdown_text:
+                        return markdown_text
+                    errors.append(f"{base_url}{path} -> no markdown in response")
+                except Exception as exc:
+                    errors.append(f"{base_url}{path} -> {exc}")
+                    logger.warning(
+                        "Crawl4AI request failed at %s%s: %s",
+                        base_url,
+                        path,
+                        exc,
+                    )
+
+    raise ValueError("Crawl4AI fetch failed: " + " | ".join(errors))
+
+
+def _normalize_url_list(urls: str | list[str]) -> list[str]:
+    if isinstance(urls, str):
+        candidates = [
+            line.strip().strip("-*0123456789. ")
+            for line in urls.replace(",", "\n").splitlines()
+        ]
+    else:
+        candidates = [str(url).strip() for url in urls]
+
+    normalized: list[str] = []
+    seen: set[str] = set()
+    for url in candidates:
+        if not url:
+            continue
+        parsed = urlsplit(url)
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            continue
+        if url not in seen:
+            seen.add(url)
+            normalized.append(url)
+    return normalized
+
+
+def _resolve_max_results(max_results: int | None = None) -> int:
+    if max_results and max_results > 0:
+        return max_results
+    try:
+        return max(1, int(os.getenv("SEARXNG_MAX_RESULTS", "5")))
+    except ValueError:
+        return 5
+
+
+@tool(parse_docstring=True)
+def crawl4ai_scrape_url(
+    url: str,
+    max_chars: Annotated[int, InjectedToolArg] = 12000,
+) -> str:
+    """Scrape a webpage URL using the configured Crawl4AI Docker API.
+
+    Args:
+        url: HTTP or HTTPS webpage URL to scrape.
+        max_chars: Maximum markdown characters to return.
+
+    Returns:
+        Markdown extracted from the page.
+    """
+    if not _build_candidate_crawl4ai_urls():
+        return "Crawl4AI is not configured. Set CRAWL4AI_URL to enable it."
+
+    try:
+        markdown_text = fetch_webpage_content_with_crawl4ai(url).strip()
+    except Exception as exc:
+        logger.exception("Crawl4AI scrape failed for url='%s'", url)
+        return f"Error scraping {url} with Crawl4AI: {exc}"
+
+    if max_chars > 0:
+        markdown_text = markdown_text[:max_chars]
+
+    return f"""## Crawl4AI scrape result
+**URL:** {url}
+
+{markdown_text}"""
+
+
+@tool(parse_docstring=True)
+def crawl4ai_scrape_urls(
+    urls: list[str],
+    max_chars_per_url: Annotated[int, InjectedToolArg] = 12000,
+) -> str:
+    """Scrape multiple webpage URLs using the configured Crawl4AI Docker API.
+
+    Args:
+        urls: HTTP or HTTPS webpage URLs returned by searxng_search.
+        max_chars_per_url: Maximum markdown characters to return per URL.
+
+    Returns:
+        Scraped markdown grouped by source URL.
+    """
+    if not _build_candidate_crawl4ai_urls():
+        return "Crawl4AI is not configured. Set CRAWL4AI_URL to enable it."
+
+    normalized_urls = _normalize_url_list(urls)
+    if not normalized_urls:
+        return "No valid HTTP/HTTPS URLs were provided to Crawl4AI."
+
+    scraped_results: list[str] = []
+    failed_results: list[str] = []
+    for index, url in enumerate(normalized_urls, start=1):
+        try:
+            markdown_text = fetch_webpage_content_with_crawl4ai(url).strip()
+            if max_chars_per_url > 0:
+                markdown_text = markdown_text[:max_chars_per_url]
+            scraped_results.append(
+                f"""## Source {index}
+**URL:** {url}
+
+{markdown_text}
+
+---"""
+            )
+        except Exception as exc:
+            logger.exception("Crawl4AI scrape failed for url='%s'", url)
+            failed_results.append(f"- {url}: {exc}")
+
+    if failed_results:
+        scraped_results.append(
+            "## Crawl4AI scrape failures\n" + "\n".join(failed_results)
+        )
+
+    return f"""Crawl4AI scraped {len(scraped_results) - bool(failed_results)} of {len(normalized_urls)} URL(s).
+
+{chr(10).join(scraped_results)}"""
 
 
 def _build_candidate_searxng_urls() -> list[str]:
@@ -64,29 +370,37 @@ def _save_sources_json(query: str, sources: list[dict[str, Any]]) -> None:
     if not json_path:
         json_path = "outputs/sources_history.json"
 
-    output_path = Path(json_path)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
     payload_entry = {
         "query": query,
         "saved_at_utc": datetime.now(timezone.utc).isoformat(),
         "count": len(sources),
         "sources": sources,
     }
-    history: list[dict[str, Any]] = []
-    if output_path.exists():
-        try:
-            raw = json.loads(output_path.read_text(encoding="utf-8"))
-            if isinstance(raw, list):
-                history = raw
-        except Exception:
-            logger.warning(
-                "Could not parse existing sources JSON at %s, recreating file.",
-                output_path,
-            )
 
-    history.append(payload_entry)
-    output_path.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
-    logger.info("Appended %s source(s) to %s", len(sources), output_path)
+    try:
+        output_path = Path(json_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        history: list[dict[str, Any]] = []
+        if output_path.exists():
+            try:
+                raw = json.loads(output_path.read_text(encoding="utf-8"))
+                if isinstance(raw, list):
+                    history = raw
+            except json.JSONDecodeError:
+                logger.warning(
+                    "Could not parse existing sources JSON at %s, recreating file.",
+                    output_path,
+                )
+
+        history.append(payload_entry)
+        output_path.write_text(
+            json.dumps(history, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        logger.info("Appended %s source(s) to %s", len(sources), output_path)
+    except OSError as exc:
+        logger.warning("Could not save sources JSON to %s: %s", json_path, exc)
 
 
 # -----------------------------
@@ -102,6 +416,16 @@ def fetch_webpage_content(url: str, timeout: float = 10.0) -> str:
     Returns:
         Webpage content as markdown
     """
+    if _build_candidate_crawl4ai_urls():
+        try:
+            return fetch_webpage_content_with_crawl4ai(url)
+        except Exception as exc:
+            logger.warning(
+                "Falling back to direct fetch for %s after Crawl4AI error: %s",
+                url,
+                exc,
+            )
+
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -180,21 +504,29 @@ def searxng_search_request(
 @tool(parse_docstring=True)
 def searxng_search(
     query: str,
-    max_results: Annotated[int, InjectedToolArg] = 3,
+    max_results: Annotated[int, InjectedToolArg] = 0,
 ) -> str:
-    """Search the web using SearXNG.
+    """Search the web using SearXNG and return source candidate URLs.
 
     Args:
         query: Search query to execute
-        max_results: Maximum number of results to return (default: 3)
+        max_results: Maximum number of results to return.
 
     Returns:
-        Formatted search results with full webpage content
+        Search result titles, snippets, and URLs to pass to crawl4ai_scrape_urls.
     """
 
+    resolved_max_results = _resolve_max_results(max_results)
     try:
-        logger.info("Running searxng_search query='%s' max_results=%s", query, max_results)
-        search_results = searxng_search_request(query=query)
+        logger.info(
+            "Running searxng_search query='%s' max_results=%s",
+            query,
+            resolved_max_results,
+        )
+        search_results = searxng_search_request(
+            query=query,
+            max_results=resolved_max_results,
+        )
     except Exception as e:
         logger.exception("Error during searxng_search")
         return f"Error during SearXNG search: {str(e)}"
@@ -203,7 +535,7 @@ def searxng_search(
     result_texts = []
     source_rows: list[dict[str, Any]] = []
 
-    for result in items[:max_results]:
+    for index, result in enumerate(items[:resolved_max_results], start=1):
         url = result.get("url")
         title = result.get("title", "Untitled result")
         snippet = result.get("content", "")
@@ -211,7 +543,6 @@ def searxng_search(
         if not url:
             continue
 
-        content = fetch_webpage_content(url)
         source_rows.append(
             {
                 "title": title,
@@ -220,10 +551,10 @@ def searxng_search(
             }
         )
 
-        result_text = f"""## {title}
+        result_text = f"""## Result {index}: {title}
 **URL:** {url}
 
-{content}
+{snippet}
 
 ---
 """
@@ -233,7 +564,13 @@ def searxng_search(
 
     logger.info("searxng_search found %s result(s) for query='%s'", len(result_texts), query)
 
-    return f"""🔍 Found {len(result_texts)} result(s) for '{query}':
+    urls = [row["url"] for row in source_rows]
+    return f"""Found {len(result_texts)} SearXNG result(s) for '{query}'.
+
+Use crawl4ai_scrape_urls with all of these URLs before writing findings:
+{json.dumps(urls, ensure_ascii=False, indent=2)}
+
+Search candidates:
 
 {chr(10).join(result_texts)}"""
 

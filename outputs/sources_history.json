@@ -47966,5 +47966,91 @@
         "snippet": "Ce jeudi 23 avril, trois prodiges français impressionnent chacun dans leur domaine : Paul Seixas fait trembler le cyclisme mondial, le nageur Léon Marchand veut battre un record de monde, et Willylancien entretient le mystère derrière ses morceaux de rap générés par IA."
       }
     ]
+  },
+  {
+    "query": "latest AI news in France",
+    "saved_at_utc": "2026-04-27T23:58:42.457623+00:00",
+    "count": 3,
+    "sources": [
+      {
+        "title": "AI news from France - Actu IA",
+        "url": "https://www.actuia.com/en/",
+        "snippet": "Artificial Intelligence News · Call for Applications: Île-de-France Region Launches DSP for an AI Hub in Paris · OpenAI Announces Major $40 Billion Funding Round ..."
+      },
+      {
+        "title": "Artificial intelligence: news, videos, reports and analysis - France 24",
+        "url": "https://www.france24.com/en/tag/artificial-intelligence/",
+        "snippet": "Artificial intelligence · Elon Musk's lawsuit against OpenAI over nonprofit claims heads to trial · AI is already getting boring · Head of OpenAI apologises for ..."
+      },
+      {
+        "title": "artificial intelligence: news, podcasts, videos and analysis - RFI",
+        "url": "https://www.rfi.fr/en/tag/artificial-intelligence/",
+        "snippet": "Mistral AI is a European competitor to American giants like ChatGPT creator OpenAI. AFP strikes deal for France's Mistral AI to use news articles. 16/01/2025."
+      }
+    ]
+  },
+  {
+    "query": "latest AI news in France",
+    "saved_at_utc": "2026-04-28T00:27:33.114223+00:00",
+    "count": 5,
+    "sources": [
+      {
+        "title": "AI news from France - Actu IA",
+        "url": "https://www.actuia.com/en/",
+        "snippet": "Artificial Intelligence News · Call for Applications: Île-de-France Region Launches DSP for an AI Hub in Paris · OpenAI Announces Major $40 Billion Funding Round ..."
+      },
+      {
+        "title": "Artificial intelligence: news, videos, reports and analysis - France 24",
+        "url": "https://www.france24.com/en/tag/artificial-intelligence/",
+        "snippet": "Artificial intelligence · Elon Musk's lawsuit against OpenAI over nonprofit claims heads to trial · AI is already getting boring · Head of OpenAI apologises for ..."
+      },
+      {
+        "title": "Artificial Intelligence - World news, culture and opinion - Le Monde",
+        "url": "https://www.lemonde.fr/en/artificial-intelligence/",
+        "snippet": "Yann Le Cun raises €900 million for his France-based AI start-up. Valued at €3 billion, AMI, the new company founded by the former head of artificial ..."
+      },
+      {
+        "title": "artificial intelligence: news, podcasts, videos and analysis - RFI",
+        "url": "https://www.rfi.fr/en/tag/artificial-intelligence/",
+        "snippet": "Mistral AI is a European competitor to American giants like ChatGPT creator OpenAI. AFP strikes deal for France's Mistral AI to use news articles. 16/01/2025."
+      },
+      {
+        "title": "AI is already getting boring • FRANCE 24 English - YouTube",
+        "url": "https://www.youtube.com/watch?v=JKbezr4yZ6c",
+        "snippet": "il y a 1 jour · ... AI #Anthropic #OpenAI Read more about this story in our article ... latest International News and Top Stories: https://www.france24.com ..."
+      }
+    ]
+  },
+  {
+    "query": "latest gaming news",
+    "saved_at_utc": "2026-04-28T00:31:48.528627+00:00",
+    "count": 5,
+    "sources": [
+      {
+        "title": "Video Game News, Game News, Entertainment News - GameSpot",
+        "url": "https://www.gamespot.com/news/",
+        "snippet": "News · Assassin's Creed Hexe Loses Another Top Developer, Who Quit To Start Their Own Studio · Fortnite Won't Remove D4vd Cosmetics After Murder Charge, But You ..."
+      },
+      {
+        "title": "Gaming News - GameRant",
+        "url": "https://gamerant.com/gaming/",
+        "snippet": "A renowned Pokemon leaker takes to social media to confirm a previous leak regarding Pokemon Winds and Waves' release, and it's not good news. ... A handful of digital adventures currently head toward a permanent exit on the PlayStation store as the early summer season officially kicks off. ... Game designers and artists working on Magic: the Gathering Arena are formally moving to unionize within Wizards of the Coast."
+      },
+      {
+        "title": "Video Game News, Reviews, and Walkthroughs - IGN",
+        "url": "https://www.ign.com/",
+        "snippet": "The Latest Game Reviews ; The $14 Portable Neck Fan Keeps You Cool During Summer Gaming Sessions · The $14 Portable Neck Fan Keeps You Cool During Summer Gaming ..."
+      },
+      {
+        "title": "Game Informer",
+        "url": "https://gameinformer.com/",
+        "snippet": "Game Informer is your source for the latest in video game news, reviews, previews, podcasts, and features."
+      },
+      {
+        "title": "GamesIndustry.biz",
+        "url": "https://www.gamesindustry.biz/",
+        "snippet": "Into Games' IG50 program to support new devs from working-class backgrounds opens again next month · Xbox boss warns \"memory costs will impact pricing, will ..."
+      }
+    ]
   }
 ]
