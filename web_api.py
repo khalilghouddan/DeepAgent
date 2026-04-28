@@ -10,6 +10,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from deep_research_searxng import build_agent, configure_logging
+from research_agent.tools import (
+    get_research_trace,
+    reset_research_trace,
+    start_research_trace,
+)
 from utils import format_message_content
 
 logger = logging.getLogger(__name__)
@@ -107,9 +112,11 @@ def run_research(payload: ResearchRequest) -> ResearchResponse:
     configure_logging(payload.log_level)
     os.environ["SEARXNG_LANGUAGE"] = payload.search_language
     response_language = _normalize_response_language(payload.search_language)
+    trace_token = start_research_trace()
 
     api_key = os.getenv("OPENAI_API_KEY", "")
     if not api_key:
+        reset_research_trace(trace_token)
         raise HTTPException(
             status_code=500, detail="Missing OPENAI_API_KEY in .env"
         )
@@ -135,7 +142,10 @@ def run_research(payload: ResearchRequest) -> ResearchResponse:
         messages = result.get("messages", [])
         answer = _extract_final_answer(messages)
         process = _serialize_process(messages)
+        process.extend(get_research_trace())
         return ResearchResponse(answer=answer, process=process)
     except Exception as exc:
         logger.exception("Research execution failed")
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+    finally:
+        reset_research_trace(trace_token)

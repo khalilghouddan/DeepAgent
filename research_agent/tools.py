@@ -9,6 +9,7 @@ import json
 import logging
 import os
 import time
+from contextvars import ContextVar, Token
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -20,6 +21,38 @@ from markdownify import markdownify
 from typing_extensions import Annotated
 
 logger = logging.getLogger(__name__)
+_research_trace: ContextVar[list[dict[str, str]] | None] = ContextVar(
+    "research_trace",
+    default=None,
+)
+
+
+def start_research_trace() -> Token[list[dict[str, str]] | None]:
+    """Start collecting research-tool events for the current request."""
+    return _research_trace.set([])
+
+
+def reset_research_trace(token: Token[list[dict[str, str]] | None]) -> None:
+    """Restore the previous trace context."""
+    _research_trace.reset(token)
+
+
+def get_research_trace() -> list[dict[str, str]]:
+    """Return collected research-tool events for display."""
+    return list(_research_trace.get() or [])
+
+
+def _record_research_trace(title: str, content: str) -> None:
+    trace = _research_trace.get()
+    if trace is None:
+        return
+    trace.append(
+        {
+            "type": "Tool",
+            "title": title,
+            "content": content.strip(),
+        }
+    )
 
 
 def _build_candidate_crawl4ai_urls() -> list[str]:
@@ -259,17 +292,35 @@ def crawl4ai_scrape_url(
     Returns:
         Markdown extracted from the page.
     """
+    _record_research_trace(
+        "Tool Call: crawl4ai_scrape_url",
+        f"URL: {url}",
+    )
+
     if not _build_candidate_crawl4ai_urls():
+        _record_research_trace(
+            "Tool Output: crawl4ai_scrape_url",
+            "Crawl4AI is not configured. Set CRAWL4AI_URL to enable it.",
+        )
         return "Crawl4AI is not configured. Set CRAWL4AI_URL to enable it."
 
     try:
         markdown_text = fetch_webpage_content_with_crawl4ai(url).strip()
     except Exception as exc:
         logger.exception("Crawl4AI scrape failed for url='%s'", url)
+        _record_research_trace(
+            "Tool Output: crawl4ai_scrape_url",
+            f"Failed scraping {url}: {exc}",
+        )
         return f"Error scraping {url} with Crawl4AI: {exc}"
 
     if max_chars > 0:
         markdown_text = markdown_text[:max_chars]
+
+    _record_research_trace(
+        "Tool Output: crawl4ai_scrape_url",
+        f"Scraped {url}\nReturned markdown characters: {len(markdown_text)}",
+    )
 
     return f"""## Crawl4AI scrape result
 **URL:** {url}
@@ -291,20 +342,37 @@ def crawl4ai_scrape_urls(
     Returns:
         Scraped markdown grouped by source URL.
     """
+    normalized_urls = _normalize_url_list(urls)
+    _record_research_trace(
+        "Tool Call: crawl4ai_scrape_urls",
+        "URLs:\n" + json.dumps(normalized_urls, ensure_ascii=False, indent=2),
+    )
+
     if not _build_candidate_crawl4ai_urls():
+        _record_research_trace(
+            "Tool Output: crawl4ai_scrape_urls",
+            "Crawl4AI is not configured. Set CRAWL4AI_URL to enable it.",
+        )
         return "Crawl4AI is not configured. Set CRAWL4AI_URL to enable it."
 
-    normalized_urls = _normalize_url_list(urls)
     if not normalized_urls:
+        _record_research_trace(
+            "Tool Output: crawl4ai_scrape_urls",
+            "No valid HTTP/HTTPS URLs were provided to Crawl4AI.",
+        )
         return "No valid HTTP/HTTPS URLs were provided to Crawl4AI."
 
     scraped_results: list[str] = []
     failed_results: list[str] = []
+    scrape_summaries: list[str] = []
     for index, url in enumerate(normalized_urls, start=1):
         try:
             markdown_text = fetch_webpage_content_with_crawl4ai(url).strip()
             if max_chars_per_url > 0:
                 markdown_text = markdown_text[:max_chars_per_url]
+            scrape_summaries.append(
+                f"{index}. OK - {url} ({len(markdown_text)} markdown chars)"
+            )
             scraped_results.append(
                 f"""## Source {index}
 **URL:** {url}
@@ -316,11 +384,19 @@ def crawl4ai_scrape_urls(
         except Exception as exc:
             logger.exception("Crawl4AI scrape failed for url='%s'", url)
             failed_results.append(f"- {url}: {exc}")
+            scrape_summaries.append(f"{index}. FAILED - {url}: {exc}")
 
     if failed_results:
         scraped_results.append(
             "## Crawl4AI scrape failures\n" + "\n".join(failed_results)
         )
+
+    successful_count = len(scraped_results) - bool(failed_results)
+    _record_research_trace(
+        "Tool Output: crawl4ai_scrape_urls",
+        f"Crawl4AI scraped {successful_count} of {len(normalized_urls)} URL(s).\n\n"
+        + "\n".join(scrape_summaries),
+    )
 
     return f"""Crawl4AI scraped {len(scraped_results) - bool(failed_results)} of {len(normalized_urls)} URL(s).
 
@@ -517,6 +593,10 @@ def searxng_search(
     """
 
     resolved_max_results = _resolve_max_results(max_results)
+    _record_research_trace(
+        "Tool Call: searxng_search",
+        f"Query: {query}\nMax results: {resolved_max_results}",
+    )
     try:
         logger.info(
             "Running searxng_search query='%s' max_results=%s",
@@ -529,6 +609,10 @@ def searxng_search(
         )
     except Exception as e:
         logger.exception("Error during searxng_search")
+        _record_research_trace(
+            "Tool Output: searxng_search",
+            f"Error during SearXNG search: {e}",
+        )
         return f"Error during SearXNG search: {str(e)}"
 
     items = search_results.get("results", [])
@@ -565,6 +649,15 @@ def searxng_search(
     logger.info("searxng_search found %s result(s) for query='%s'", len(result_texts), query)
 
     urls = [row["url"] for row in source_rows]
+    source_summary = [
+        f"{index}. {row['title']}: {row['url']}"
+        for index, row in enumerate(source_rows, start=1)
+    ]
+    _record_research_trace(
+        "Tool Output: searxng_search",
+        f"Found {len(result_texts)} SearXNG result(s) for '{query}'.\n\n"
+        + "\n".join(source_summary),
+    )
     return f"""Found {len(result_texts)} SearXNG result(s) for '{query}'.
 
 Use crawl4ai_scrape_urls with all of these URLs before writing findings:
