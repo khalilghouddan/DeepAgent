@@ -87,6 +87,11 @@ def build_agent(
     )
 
     normalized_base_url = (base_url or "").strip()
+    if normalized_base_url:
+        os.environ["OPENAI_BASE_URL"] = normalized_base_url
+    else:
+        os.environ.pop("OPENAI_BASE_URL", None)
+
     model_kwargs = {
         "model": model_name,
         "api_key": api_key,
