@@ -4,12 +4,24 @@ function todayIsoDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function responseErrorMessage(response, data) {
+  const detail = data.detail || data.error || data.raw;
+  if (!detail) {
+    return `Request failed with status ${response.status}`;
+  }
+  if (typeof detail === "string") {
+    return detail;
+  }
+  return JSON.stringify(detail);
+}
+
 function App() {
   const [query, setQuery] = useState("latest AI news in France");
   const [language, setLanguage] = useState("any");
   const [logLevel, setLogLevel] = useState("INFO");
   const [currentDate, setCurrentDate] = useState(todayIsoDate());
   const [processMessages, setProcessMessages] = useState([]);
+  const [answer, setAnswer] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -25,6 +37,7 @@ function App() {
     event.preventDefault();
     setError("");
     setProcessMessages([]);
+    setAnswer("");
     setIsSubmitting(true);
 
     try {
@@ -52,14 +65,10 @@ function App() {
       }
 
       if (!response.ok) {
-        throw new Error(
-          data.detail ||
-            data.error ||
-            data.raw ||
-            `Request failed with status ${response.status}`
-        );
+        throw new Error(responseErrorMessage(response, data));
       }
 
+      setAnswer(data.answer || "");
       setProcessMessages(Array.isArray(data.process) ? data.process : []);
     } catch (submitError) {
       setError(submitError.message || "Unknown error");
@@ -126,6 +135,12 @@ function App() {
           <button className="submit" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Running..." : "Submit"}
           </button>
+
+          {isSubmitting ? (
+            <p className="status-block">
+              Research is running. This can take a while for broad queries.
+            </p>
+          ) : null}
         </form>
 
         {error ? (
@@ -133,6 +148,15 @@ function App() {
             <label htmlFor="error">Error</label>
             <pre id="error" className="error-block">
               {error}
+            </pre>
+          </>
+        ) : null}
+
+        {answer ? (
+          <>
+            <label htmlFor="answer">Answer</label>
+            <pre id="answer" className="answer-block">
+              {answer}
             </pre>
           </>
         ) : null}

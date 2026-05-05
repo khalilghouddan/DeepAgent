@@ -86,16 +86,20 @@ def build_agent(
         + language_instruction
     )
 
-    model = ChatOpenAI(
-        model=model_name,
-        api_key=api_key,
-        base_url=base_url or None,
-        temperature=0,
-    )
+    normalized_base_url = (base_url or "").strip()
+    model_kwargs = {
+        "model": model_name,
+        "api_key": api_key,
+        "temperature": 0,
+    }
+    if normalized_base_url:
+        model_kwargs["base_url"] = normalized_base_url
+
+    model = ChatOpenAI(**model_kwargs)
     logger.info(
         "Initialized ChatOpenAI model='%s'%s",
         model_name,
-        " with custom base_url" if base_url else "",
+        " with custom base_url" if normalized_base_url else "",
     )
     return create_deep_agent(
         model=model,

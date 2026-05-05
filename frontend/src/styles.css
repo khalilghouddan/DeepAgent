@@ -114,6 +114,12 @@ input[type="date"]:focus {
   cursor: wait;
 }
 
+.status-block {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .process-list {
   display: grid;
   gap: 12px;
@@ -168,6 +174,19 @@ input[type="date"]:focus {
   color: #fef2f2;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+
+.answer-block {
+  margin: 0 0 14px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #b7d7d2;
+  background: #f0fdfa;
+  color: var(--ink);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+  line-height: 1.5;
 }
 
 @media (max-width: 640px) {

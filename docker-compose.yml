@@ -2,6 +2,9 @@ services:
   searxng:
     image: searxng/searxng:latest
     restart: unless-stopped
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     expose:
       - "8080"
     volumes:
@@ -14,12 +17,19 @@ services:
 
   crawl4ai:
     build:
-      context: /home/rihab/crawl4ai
+      context: "/mnt/c/Users/dell 7470/Desktop/crawl4ai_service-master"
       dockerfile: Dockerfile
     image: crawl4ai-crawl-api:local
     restart: unless-stopped
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8001
+      CORS_ORIGINS: "*"
     expose:
-      - "8000"
+      - "8001"
 
   api:
     build:
@@ -28,11 +38,16 @@ services:
     image: deep-agent/deep-agent:latest
     user: "${UID:-1000}:${GID:-1000}"
     restart: unless-stopped
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     env_file:
       - .env
     environment:
       SEARXNG_URL: http://searxng:8080/search
-      CRAWL4AI_URL: ${CRAWL4AI_URL:-http://crawl4ai:8000}
+      CRAWL4AI_URL: ${CRAWL4AI_URL:-http://crawl4ai:8001}
       CRAWL4AI_API_TOKEN: ${CRAWL4AI_API_TOKEN:-}
       SOURCES_JSON_PATH: /app/outputs/sources_history.json
     volumes:
@@ -52,6 +67,9 @@ services:
       dockerfile: Dockerfile
     image: deep-agent/frontend:latest
     restart: unless-stopped
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     environment:
       VITE_API_PROXY_TARGET: http://api:8000
     ports:

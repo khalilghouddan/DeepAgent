@@ -110,6 +110,22 @@ def _crawl4ai_scrape_paths() -> list[str]:
     return paths
 
 
+def _crawl4ai_timeout(default: float = 60.0) -> float:
+    configured = os.getenv("CRAWL4AI_TIMEOUT", "").strip()
+    if not configured:
+        return default
+
+    try:
+        return max(1.0, float(configured))
+    except ValueError:
+        logger.warning(
+            "Invalid CRAWL4AI_TIMEOUT=%r; using default %.1fs",
+            configured,
+            default,
+        )
+        return default
+
+
 def _extract_crawl4ai_markdown(payload: Any) -> str:
     """Extract markdown from common Crawl4AI Docker response shapes."""
     if isinstance(payload, list):
@@ -183,11 +199,12 @@ def _poll_crawl4ai_task(
     raise TimeoutError(f"Crawl4AI task {task_id} did not finish: {last_payload}")
 
 
-def fetch_webpage_content_with_crawl4ai(url: str, timeout: float = 60.0) -> str:
+def fetch_webpage_content_with_crawl4ai(url: str, timeout: float | None = None) -> str:
     """Fetch a URL through a configured Crawl4AI Docker API."""
     if urlsplit(url).scheme not in {"http", "https"}:
         raise ValueError("Crawl4AI only accepts http:// and https:// URLs")
 
+    timeout = _crawl4ai_timeout() if timeout is None else timeout
     errors: list[str] = []
     headers = _crawl4ai_headers()
 
