@@ -456,12 +456,12 @@ def _build_candidate_searxng_urls() -> list[str]:
 
 
 def _save_sources_json(query: str, sources: list[dict[str, Any]]) -> None:
-    """Persist returned sources into a JSON history file."""
+    """Persist returned sources into a JSON history file when explicitly enabled."""
     json_path = os.getenv("SEARXNG_SOURCES_JSON_PATH") or os.getenv(
         "SOURCES_JSON_PATH"
     )
     if not json_path:
-        json_path = "outputs/sources_history.json"
+        return
 
     payload_entry = {
         "query": query,

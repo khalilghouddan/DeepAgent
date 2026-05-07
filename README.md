@@ -61,7 +61,7 @@ Useful options:
 - `--log-level DEBUG`
 - `--max-concurrent-research-units 1`
 - `--max-researcher-iterations 1`
-- `--sources-json outputs/sources_history.json`
+- `--sources-json outputs/sources_history.json` (optional JSON source export)
 
 ## Logging
 
@@ -73,8 +73,9 @@ Set `LOG_LEVEL` to `DEBUG` for verbose traces.
 
 ## Saved Sources
 
-For every request, sources are appended to:
-- `outputs/sources_history.json`
+Research results are saved to Postgres when `DEEP_AGENT_DB_ENABLED=true`.
+
+Optionally, you can also append returned search sources to a JSON file by setting `SOURCES_JSON_PATH` or passing `--sources-json`.
 
 Each entry contains:
 - `query`

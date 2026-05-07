@@ -162,8 +162,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--sources-json",
-        default=os.getenv("SOURCES_JSON_PATH", "outputs/sources_history.json"),
-        help="Path to append returned search sources as JSON history.",
+        default=os.getenv("SOURCES_JSON_PATH", ""),
+        help="Optional path to append returned search sources as JSON history.",
     )
     parser.add_argument(
         "--search-language",
@@ -188,7 +188,10 @@ def main() -> None:
     load_dotenv(".env", override=False)
     args = parse_args()
     configure_logging(args.log_level)
-    os.environ["SOURCES_JSON_PATH"] = args.sources_json
+    if args.sources_json:
+        os.environ["SOURCES_JSON_PATH"] = args.sources_json
+    else:
+        os.environ.pop("SOURCES_JSON_PATH", None)
     os.environ["SEARXNG_LANGUAGE"] = args.search_language
 
     if not args.api_key:

@@ -49,7 +49,6 @@ services:
       SEARXNG_URL: http://searxng:8080/search
       CRAWL4AI_URL: ${CRAWL4AI_URL:-http://crawl4ai:8001}
       CRAWL4AI_API_TOKEN: ${CRAWL4AI_API_TOKEN:-}
-      SOURCES_JSON_PATH: /app/outputs/sources_history.json
     volumes:
       - ./outputs:/app/outputs
     depends_on:
