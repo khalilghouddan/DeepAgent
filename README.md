@@ -7,10 +7,13 @@ Python script version of the notebook workflow for a deep research agent:
 
 ## Project Files
 
-- `deep_research_searxng.py`: main CLI script
-- `research_agent/tools.py`: search and reflection tools
-- `research_agent/prompts.py`: orchestration and researcher prompts
-- `utils.py`: rich message formatting helpers
+- `config/`: shared application configuration helpers
+- `api/`: FastAPI app, research execution, and structured output handling
+- `cli/`: command-line entrypoints
+- `research_agent/core/`: agent factory and core assembly
+- `research_agent/tools/`: search, scraping, tracing, and reflection tools
+- `research_agent/prompts/`: orchestration and researcher prompts
+- `research_agent/utils/`: message formatting helpers
 
 ## Setup
 
@@ -42,7 +45,7 @@ DEEP_AGENT_DB_NAME=crawl4ai_results
 
 Notes:
 - Leave `OPENAI_BASE_URL` empty for official OpenAI API.
-- `research_agent/tools.py` expects SearXNG at `http://localhost:8080/search`.
+- `research_agent/tools/` expects SearXNG at `http://localhost:8080/search`.
 - Set `SEARXNG_LANGUAGE=any` for multilingual results, or a specific code like `en`, `fr`, `ar`.
 - For local (non-Docker) runs, set `SEARXNG_URL=http://localhost:8080/search`.
 - For Docker Compose app service, `SEARXNG_URL=http://searxng:8080/search` is correct.
@@ -52,7 +55,13 @@ Notes:
 ## Run
 
 ```bash
-python deep_research_searxng.py --query "What are the latest OpenAI features compared to latest Gen AI updates?"
+python -m cli.deep_research --query "What are the latest OpenAI features compared to latest Gen AI updates?"
+```
+
+The compatibility wrapper inside the CLI package also works:
+
+```bash
+python -m cli.deep_research_searxng --query "What are the latest OpenAI features compared to latest Gen AI updates?"
 ```
 
 Useful options:
@@ -61,27 +70,18 @@ Useful options:
 - `--log-level DEBUG`
 - `--max-concurrent-research-units 1`
 - `--max-researcher-iterations 1`
-- `--sources-json outputs/sources_history.json` (optional JSON source export)
 
 ## Logging
 
 Logging is enabled in:
-- `deep_research_searxng.py` for app lifecycle events
-- `research_agent/tools.py` for search/fetch operations
+- `cli/deep_research.py` for CLI lifecycle events
+- `research_agent/tools/` for search/fetch operations
 
 Set `LOG_LEVEL` to `DEBUG` for verbose traces.
 
 ## Saved Sources
 
 Research results are saved to Postgres when `DEEP_AGENT_DB_ENABLED=true`.
-
-Optionally, you can also append returned search sources to a JSON file by setting `SOURCES_JSON_PATH` or passing `--sources-json`.
-
-Each entry contains:
-- `query`
-- `saved_at_utc`
-- `count`
-- `sources` (`title`, `url`, `snippet`)
 
 ## Postgres Run History
 
@@ -114,5 +114,5 @@ docker compose up
 Run a custom query:
 
 ```bash
-docker compose run --rm app python deep_research_searxng.py --query "your query"
+docker compose run --rm app python -m cli.deep_research --query "your query"
 ```

@@ -16,11 +16,16 @@ function responseErrorMessage(response, data) {
 }
 
 function App() {
-  const [query, setQuery] = useState("latest AI news in France");
+  const [query, setQuery] = useState("");
+  const [modelProvider, setModelProvider] = useState("local");
   const [language, setLanguage] = useState("any");
   const [logLevel, setLogLevel] = useState("INFO");
   const [currentDate, setCurrentDate] = useState(todayIsoDate());
+  const [maxSources, setMaxSources] = useState(3);
+  const [researcherIterations, setResearcherIterations] = useState(3);
+  const [outputSchema, setOutputSchema] = useState("");
   const [processMessages, setProcessMessages] = useState([]);
+  const [reportContent, setReportContent] = useState("");
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,10 +42,20 @@ function App() {
     event.preventDefault();
     setError("");
     setProcessMessages([]);
+    setReportContent("");
     setAnswer("");
     setIsSubmitting(true);
 
     try {
+      let parsedOutputSchema;
+      if (outputSchema.trim()) {
+        try {
+          parsedOutputSchema = JSON.parse(outputSchema);
+        } catch {
+          throw new Error("Output JSON Schema must be valid JSON.");
+        }
+      }
+
       const response = await fetch("/api/research", {
         method: "POST",
         headers: {
@@ -48,9 +63,13 @@ function App() {
         },
         body: JSON.stringify({
           query,
+          model_provider: modelProvider,
           search_language: language,
           log_level: logLevel,
-          search_date: currentDate
+          search_date: currentDate,
+          max_sources: Number(maxSources),
+          researcher_iterations: Number(researcherIterations),
+          output_schema: parsedOutputSchema
         })
       });
 
@@ -68,6 +87,11 @@ function App() {
         throw new Error(responseErrorMessage(response, data));
       }
 
+      setReportContent(
+        data.report_content && data.report_content !== data.answer
+          ? data.report_content
+          : ""
+      );
       setAnswer(data.answer || "");
       setProcessMessages(Array.isArray(data.process) ? data.process : []);
     } catch (submitError) {
@@ -80,16 +104,40 @@ function App() {
   return (
     <main className="page">
       <section className="card">
-        <h1>Deep Agent Frontend</h1>
+        <header className="app-header">
+          <h1>Deep Agent Frontend</h1>
+          <a className="doc-link" href="/doc">Documentation</a>
+        </header>
 
         <form onSubmit={handleSubmit}>
+          <label htmlFor="model-provider-local">Model Provider</label>
+          <div className="provider-toggle" role="group" aria-label="Model Provider">
+            <button
+              id="model-provider-local"
+              type="button"
+              className={modelProvider === "local" ? "active" : ""}
+              aria-pressed={modelProvider === "local"}
+              onClick={() => setModelProvider("local")}
+            >
+              Local
+            </button>
+            <button
+              type="button"
+              className={modelProvider === "openai" ? "active" : ""}
+              aria-pressed={modelProvider === "openai"}
+              onClick={() => setModelProvider("openai")}
+            >
+              OpenAI
+            </button>
+          </div>
+
           <label htmlFor="query">Query</label>
           <textarea
             id="query"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             rows={4}
-            placeholder="Ask a research question..."
+            placeholder="Enter your query here..."
           />
 
           <div className="row">
@@ -130,7 +178,40 @@ function App() {
                 onChange={(event) => setCurrentDate(event.target.value)}
               />
             </div>
+
+            <div className="field">
+              <label htmlFor="max-sources">SearXNG Sources</label>
+              <input
+                id="max-sources"
+                type="number"
+                min="1"
+                max="20"
+                value={maxSources}
+                onChange={(event) => setMaxSources(event.target.value)}
+              />
+            </div>
+
+            <div className="field">
+              <label htmlFor="researcher-iterations">Reflection Rounds</label>
+              <input
+                id="researcher-iterations"
+                type="number"
+                min="1"
+                max="10"
+                value={researcherIterations}
+                onChange={(event) => setResearcherIterations(event.target.value)}
+              />
+            </div>
           </div>
+
+          <label htmlFor="output-schema">Output JSON Schema</label>
+          <textarea
+            id="output-schema"
+            value={outputSchema}
+            onChange={(event) => setOutputSchema(event.target.value)}
+            rows={8}
+            placeholder='{"type":"object","properties":{"summary":{"type":"string"},"sources":{"type":"array","items":{"type":"string"}}},"required":["summary","sources"]}'
+          />
 
           <button className="submit" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Running..." : "Submit"}
@@ -148,6 +229,15 @@ function App() {
             <label htmlFor="error">Error</label>
             <pre id="error" className="error-block">
               {error}
+            </pre>
+          </>
+        ) : null}
+
+        {reportContent ? (
+          <>
+            <label htmlFor="report-content">Report Content</label>
+            <pre id="report-content" className="report-block">
+              {reportContent}
             </pre>
           </>
         ) : null}

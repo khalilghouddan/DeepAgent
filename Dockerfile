@@ -17,4 +17,4 @@ RUN mkdir -p /app/outputs && chown -R app:app /app
 
 USER app
 
-CMD ["python", "deep_research_searxng.py"]
+CMD ["python", "-m", "cli.deep_research"]
