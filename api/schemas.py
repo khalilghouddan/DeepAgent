@@ -14,6 +14,7 @@ class ResearchRequest(BaseModel):
     log_level: str = "INFO"
     search_date: str | None = None
     max_sources: int | None = Field(default=None, ge=1, le=20)
+    crawl4ai_batch_size: int | None = Field(default=None, ge=1, le=50)
     researcher_iterations: int | None = Field(default=None, ge=1, le=10)
     output_schema: dict[str, Any] | None = None
 

@@ -22,6 +22,7 @@ function App() {
   const [logLevel, setLogLevel] = useState("INFO");
   const [currentDate, setCurrentDate] = useState(todayIsoDate());
   const [maxSources, setMaxSources] = useState(3);
+  const [crawl4aiBatchSize, setCrawl4aiBatchSize] = useState(10);
   const [researcherIterations, setResearcherIterations] = useState(3);
   const [outputSchema, setOutputSchema] = useState("");
   const [processMessages, setProcessMessages] = useState([]);
@@ -68,6 +69,7 @@ function App() {
           log_level: logLevel,
           search_date: currentDate,
           max_sources: Number(maxSources),
+          crawl4ai_batch_size: Number(crawl4aiBatchSize),
           researcher_iterations: Number(researcherIterations),
           output_schema: parsedOutputSchema
         })
@@ -188,6 +190,18 @@ function App() {
                 max="20"
                 value={maxSources}
                 onChange={(event) => setMaxSources(event.target.value)}
+              />
+            </div>
+
+            <div className="field">
+              <label htmlFor="crawl4ai-batch-size">Crawl4AI Batch Size</label>
+              <input
+                id="crawl4ai-batch-size"
+                type="number"
+                min="1"
+                max="50"
+                value={crawl4aiBatchSize}
+                onChange={(event) => setCrawl4aiBatchSize(event.target.value)}
               />
             </div>
 

@@ -97,6 +97,8 @@ def execute_research(payload: dict[str, Any]) -> ResearchResponse:
     os.environ["SEARXNG_LANGUAGE"] = search_language
     if payload.get("max_sources"):
         os.environ["SEARXNG_MAX_RESULTS"] = str(payload["max_sources"])
+    if payload.get("crawl4ai_batch_size"):
+        os.environ["CRAWL4AI_BATCH_SIZE"] = str(payload["crawl4ai_batch_size"])
     response_language = normalize_response_language(search_language)
     output_schema = normalize_output_schema(payload.get("output_schema"))
     trace_token = start_research_trace()

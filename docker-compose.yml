@@ -17,7 +17,15 @@ services:
       SEARXNG_URL: http://host.docker.internal:8080/search
       CRAWL4AI_URL: http://host.docker.internal:8007
       CRAWL4AI_API_TOKEN: ${CRAWL4AI_API_TOKEN:-}
+      CRAWL4AI_BATCH_SIZE: ${CRAWL4AI_BATCH_SIZE:-10}
+      CRAWL4AI_TIMEOUT: ${CRAWL4AI_TIMEOUT:-180}
     volumes:
+      - ./api:/app/api
+      - ./cli:/app/cli
+      - ./config:/app/config
+      - ./db:/app/db
+      - ./model_config:/app/model_config
+      - ./research_agent:/app/research_agent
       - ./outputs:/app/outputs
     ports:
       - "8000:8000"

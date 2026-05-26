@@ -24,16 +24,45 @@ def _chunks(items: list[str], size: int) -> list[list[str]]:
     return [items[index : index + size] for index in range(0, len(items), size)]
 
 
+def _retry_missing_urls(
+    urls: list[str],
+    markdown_by_url: dict[str, str],
+    failed_results: list[str],
+    batch_error: Exception | None = None,
+) -> int:
+    recovered_count = 0
+    for url in urls:
+        if markdown_by_url.get(url, "").strip():
+            continue
+
+        try:
+            markdown_by_url[url] = fetch_webpage_content_with_crawl4ai(url).strip()
+            recovered_count += 1
+        except Exception as exc:
+            logger.warning(
+                "Crawl4AI single-url retry failed for url='%s': %s",
+                url,
+                exc,
+            )
+            if batch_error is None:
+                failed_results.append(f"- {url}: no markdown returned; retry failed: {exc}")
+            else:
+                failed_results.append(
+                    f"- {url}: batch failed ({batch_error}); single-url retry failed: {exc}"
+                )
+    return recovered_count
+
+
 @tool(parse_docstring=True)
 def crawl4ai_scrape_url(
     url: str,
-    max_chars: Annotated[int, InjectedToolArg] = 12000,
+    max_chars: Annotated[int, InjectedToolArg] = 0,
 ) -> str:
     """Scrape a webpage URL using the configured Crawl4AI Docker API.
 
     Args:
         url: HTTP or HTTPS webpage URL to scrape.
-        max_chars: Maximum markdown characters to return.
+        max_chars: Maximum markdown characters to return. Use 0 for the whole page.
 
     Returns:
         Markdown extracted from the page.
@@ -77,13 +106,14 @@ def crawl4ai_scrape_url(
 @tool(parse_docstring=True)
 def crawl4ai_scrape_urls(
     urls: list[str],
-    max_chars_per_url: Annotated[int, InjectedToolArg] = 12000,
+    max_chars_per_url: Annotated[int, InjectedToolArg] = 0,
 ) -> str:
     """Scrape multiple webpage URLs using the configured Crawl4AI Docker API.
 
     Args:
         urls: HTTP or HTTPS webpage URLs returned by searxng_search.
-        max_chars_per_url: Maximum markdown characters to return per URL.
+        max_chars_per_url: Maximum markdown characters to return per URL. Use 0 for
+            the whole page.
 
     Returns:
         Scraped markdown grouped by source URL.
@@ -112,12 +142,40 @@ def crawl4ai_scrape_urls(
     failed_results: list[str] = []
     batch_size = crawl4ai_batch_size()
     batches = _chunks(normalized_urls, batch_size)
+    retry_count = 0
+    recovered_count = 0
     for url_batch in batches:
         try:
-            markdown_by_url.update(fetch_webpage_contents_with_crawl4ai(url_batch))
+            if len(url_batch) == 1:
+                url = url_batch[0]
+                markdown_by_url[url] = fetch_webpage_content_with_crawl4ai(url).strip()
+            else:
+                markdown_by_url.update(fetch_webpage_contents_with_crawl4ai(url_batch))
         except Exception as exc:
-            logger.exception("Crawl4AI batch scrape failed for urls=%s", url_batch)
-            failed_results.extend(f"- {url}: {exc}" for url in url_batch)
+            logger.warning("Crawl4AI scrape failed for urls=%s: %s", url_batch, exc)
+            if len(url_batch) == 1:
+                failed_results.append(f"- {url_batch[0]}: {exc}")
+                continue
+
+            retry_count += len(url_batch)
+            recovered_count += _retry_missing_urls(
+                url_batch,
+                markdown_by_url,
+                failed_results,
+                batch_error=exc,
+            )
+            continue
+
+        missing_urls = [
+            url for url in url_batch if not markdown_by_url.get(url, "").strip()
+        ]
+        if missing_urls:
+            retry_count += len(missing_urls)
+            recovered_count += _retry_missing_urls(
+                missing_urls,
+                markdown_by_url,
+                failed_results,
+            )
 
     scraped_results: list[str] = []
     scrape_summaries: list[str] = []
@@ -148,11 +206,20 @@ def crawl4ai_scrape_urls(
             "## Crawl4AI scrape failures\n" + "\n".join(failed_results)
         )
 
-    successful_count = len(scraped_results) - bool(failed_results)
+    successful_count = sum(
+        1 for url in normalized_urls if markdown_by_url.get(url, "").strip()
+    )
+    retry_summary = ""
+    if retry_count:
+        retry_summary = (
+            f", with {recovered_count} recovered from {retry_count} "
+            "single-url retry request(s)"
+        )
+    request_kind = "single-url" if batch_size == 1 else "batch"
     record_research_trace(
         "Tool Output: crawl4ai_scrape_urls",
         f"Crawl4AI scraped {successful_count} of {len(normalized_urls)} URL(s) "
-        f"in {len(batches)} batch request(s).\n\n"
+        f"in {len(batches)} {request_kind} request(s){retry_summary}.\n\n"
         + "\n".join(scrape_summaries),
     )
 
