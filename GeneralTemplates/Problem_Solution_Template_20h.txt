@@ -1,0 +1,511 @@
+{
+  "id": "Problem_Solution_Template_20h",
+  "template_type": "problem_solution",
+  "description": "A high-level strategy template designed for enterprise decision-making, consulting-style analysis, and professional leadership training.",
+  "learning_goal": "Help learners identify key business challenges and develop effective, strategic solutions through critical analysis.",
+  "domains": ["business_consulting", "strategy", "leadership", "enterprise_management"],
+  "duration_min": 10,
+  "duration_max": 20,
+  "levels": ["advanced", "professional"],
+  "teaching_styles": ["advanced_strategy", "consulting_style", "executive_problem_solving"],
+  "recommended_for": ["enterprise_decision_making", "high_level_strategy", "professional_business_training"]
+}
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "enterprise_strategy_foundations",
+    "chapter_title": "Enterprise Strategy & Executive Problem-Solving Foundations",
+    "duration_minutes": 180,
+    "difficulty": "advanced",
+    "learning_goal": "Establish executive-level understanding of strategic problem-solving, enterprise systems, and organizational complexity.",
+    "learning_outcomes": [
+      "Understand enterprise-level strategic challenges",
+      "Interpret executive decision-making frameworks",
+      "Recognize organizational complexity and dependencies",
+      "Develop consulting-oriented analytical thinking"
+    ],
+    "must_contain": [
+      "enterprise strategy principles",
+      "organizational systems thinking",
+      "executive decision-making",
+      "consulting methodologies",
+      "business transformation fundamentals"
+    ],
+    "delivery_methods": [
+      "executive lectures",
+      "consulting-style discussions",
+      "strategic framework analysis",
+      "enterprise case exploration"
+    ],
+    "visual_requirements": [
+      "enterprise architecture maps",
+      "organizational structure diagrams",
+      "executive decision frameworks",
+      "strategy workflow charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "enterprise_business_complexity",
+        "estimated_duration": 60,
+        "purpose": "Introduce large-scale organizational complexity and strategic interdependencies.",
+        "must_contain": [
+          "enterprise systems",
+          "cross-functional dependencies",
+          "global market pressures",
+          "organizational dynamics"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "consulting_problem_solving_frameworks",
+        "estimated_duration": 60,
+        "purpose": "Teach consulting-oriented frameworks for executive problem-solving.",
+        "must_contain": [
+          "structured problem-solving",
+          "MECE thinking",
+          "hypothesis-driven analysis",
+          "strategic prioritization"
+        ]
+      },
+      {
+        "lesson_id": "1.3",
+        "lesson_type": "executive_decision_making",
+        "estimated_duration": 60,
+        "purpose": "Develop executive-level reasoning and strategic evaluation abilities.",
+        "must_contain": [
+          "high-stakes decisions",
+          "uncertainty management",
+          "stakeholder alignment",
+          "strategic trade-offs"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of enterprise strategic foundations.",
+      "must_test": [
+        "consulting frameworks",
+        "executive reasoning",
+        "systems thinking",
+        "organizational complexity"
+      ],
+      "question_types": [
+        "scenario_analysis",
+        "framework_application",
+        "strategic_reasoning"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "advanced_business_diagnostics",
+    "chapter_title": "Advanced Business Diagnostics & Strategic Analysis",
+    "duration_minutes": 240,
+    "difficulty": "advanced",
+    "learning_goal": "Develop deep analytical capabilities for diagnosing enterprise-level business problems and strategic risks.",
+    "learning_outcomes": [
+      "Perform enterprise diagnostics",
+      "Identify structural business weaknesses",
+      "Analyze operational and strategic risks",
+      "Interpret market and organizational signals"
+    ],
+    "must_contain": [
+      "enterprise diagnostics",
+      "root cause analysis",
+      "market evaluation",
+      "organizational performance analysis",
+      "strategic risk assessment"
+    ],
+    "delivery_methods": [
+      "consulting workshops",
+      "executive scenario analysis",
+      "critical evaluation",
+      "strategic discussions"
+    ],
+    "visual_requirements": [
+      "risk matrices",
+      "organizational process maps",
+      "financial and operational dashboards",
+      "stakeholder influence diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "enterprise_root_cause_analysis",
+        "estimated_duration": 80,
+        "purpose": "Teach advanced diagnostic methods for identifying systemic business issues.",
+        "must_contain": [
+          "systemic failures",
+          "organizational bottlenecks",
+          "cross-functional analysis",
+          "performance inefficiencies"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "market_and_competitive_analysis",
+        "estimated_duration": 80,
+        "purpose": "Analyze market positioning, competitive dynamics, and strategic threats.",
+        "must_contain": [
+          "competitive pressure",
+          "market shifts",
+          "industry disruption",
+          "strategic positioning"
+        ]
+      },
+      {
+        "lesson_id": "2.3",
+        "lesson_type": "stakeholder_and_risk_evaluation",
+        "estimated_duration": 80,
+        "purpose": "Evaluate stakeholder interests, governance risks, and enterprise impact.",
+        "must_contain": [
+          "stakeholder alignment",
+          "risk prioritization",
+          "governance concerns",
+          "enterprise implications"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate advanced diagnostic and analytical capability.",
+      "must_test": [
+        "root cause analysis",
+        "market reasoning",
+        "risk interpretation",
+        "stakeholder analysis"
+      ],
+      "question_types": [
+        "enterprise_case_analysis",
+        "diagnostic_reasoning",
+        "strategic_scenarios"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "strategic_solution_architecture",
+    "chapter_title": "Strategic Solution Architecture & Transformation Planning",
+    "duration_minutes": 260,
+    "difficulty": "advanced_to_professional",
+    "learning_goal": "Teach learners how to architect enterprise-level strategic solutions and transformation initiatives.",
+    "learning_outcomes": [
+      "Design enterprise transformation strategies",
+      "Evaluate strategic alternatives",
+      "Optimize organizational solutions",
+      "Understand large-scale implementation planning"
+    ],
+    "must_contain": [
+      "transformation planning",
+      "enterprise strategy design",
+      "solution optimization",
+      "organizational alignment",
+      "implementation roadmaps"
+    ],
+    "delivery_methods": [
+      "strategy workshops",
+      "solution architecture sessions",
+      "executive simulations",
+      "consulting-style planning"
+    ],
+    "visual_requirements": [
+      "transformation roadmaps",
+      "enterprise strategy maps",
+      "solution architecture diagrams",
+      "operational alignment charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "enterprise_solution_design",
+        "estimated_duration": 90,
+        "purpose": "Design large-scale strategic solutions for enterprise challenges.",
+        "must_contain": [
+          "organizational redesign",
+          "strategic initiatives",
+          "resource alignment",
+          "enterprise innovation"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "decision_optimization_and_tradeoffs",
+        "estimated_duration": 85,
+        "purpose": "Optimize executive decisions under operational and strategic constraints.",
+        "must_contain": [
+          "trade-off analysis",
+          "resource optimization",
+          "strategic prioritization",
+          "performance balancing"
+        ]
+      },
+      {
+        "lesson_id": "3.3",
+        "lesson_type": "implementation_and_change_management",
+        "estimated_duration": 85,
+        "purpose": "Understand implementation planning and organizational transformation management.",
+        "must_contain": [
+          "change management",
+          "transformation execution",
+          "organizational resistance",
+          "leadership communication"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate enterprise solution design and optimization ability.",
+      "must_test": [
+        "solution architecture",
+        "strategic optimization",
+        "implementation planning",
+        "transformation reasoning"
+      ],
+      "question_types": [
+        "executive_case_analysis",
+        "strategy_design",
+        "decision_optimization"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "executive_case_simulation",
+    "chapter_title": "Executive Case Simulations & Consulting Practice",
+    "duration_minutes": 260,
+    "difficulty": "professional",
+    "learning_goal": "Apply consulting-style strategic analysis to realistic enterprise and leadership scenarios.",
+    "learning_outcomes": [
+      "Interpret complex enterprise situations",
+      "Apply consulting frameworks to cases",
+      "Develop executive recommendations",
+      "Analyze transformation and leadership challenges"
+    ],
+    "must_contain": [
+      "enterprise case simulations",
+      "consulting-style analysis",
+      "leadership challenges",
+      "strategic recommendations",
+      "business transformation cases"
+    ],
+    "delivery_methods": [
+      "executive simulations",
+      "case-study workshops",
+      "consulting presentations",
+      "leadership discussions"
+    ],
+    "visual_requirements": [
+      "enterprise dashboards",
+      "case simulation workflows",
+      "strategy execution maps",
+      "organizational transformation visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "enterprise_transformation_case",
+        "estimated_duration": 90,
+        "purpose": "Analyze enterprise-wide transformation initiatives and restructuring strategies.",
+        "must_contain": [
+          "digital transformation",
+          "organizational restructuring",
+          "enterprise modernization",
+          "strategic adaptation"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "leadership_and_crisis_management_case",
+        "estimated_duration": 85,
+        "purpose": "Solve leadership and crisis-related business challenges.",
+        "must_contain": [
+          "crisis leadership",
+          "stakeholder communication",
+          "decision pressure",
+          "organizational recovery"
+        ]
+      },
+      {
+        "lesson_id": "4.3",
+        "lesson_type": "market_expansion_and_growth_case",
+        "estimated_duration": 85,
+        "purpose": "Develop strategic recommendations for enterprise growth and expansion.",
+        "must_contain": [
+          "market expansion",
+          "growth strategy",
+          "competitive positioning",
+          "global operations"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Assess enterprise-level consulting and leadership reasoning.",
+      "must_test": [
+        "executive decision-making",
+        "consulting analysis",
+        "leadership strategy",
+        "transformation planning"
+      ],
+      "question_types": [
+        "executive_scenarios",
+        "consulting_case_analysis",
+        "leadership_reasoning"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "future_enterprise_strategy_and_innovation",
+    "chapter_title": "Future Enterprise Strategy & Innovation Leadership",
+    "duration_minutes": 180,
+    "difficulty": "professional",
+    "learning_goal": "Prepare learners for future-oriented strategic leadership, innovation management, and enterprise evolution.",
+    "learning_outcomes": [
+      "Interpret future enterprise trends",
+      "Analyze disruptive innovation",
+      "Understand adaptive leadership",
+      "Evaluate future business models"
+    ],
+    "must_contain": [
+      "future strategy",
+      "enterprise innovation",
+      "digital disruption",
+      "adaptive leadership",
+      "organizational evolution"
+    ],
+    "delivery_methods": [
+      "innovation discussions",
+      "future scenario analysis",
+      "executive forecasting",
+      "strategic reflection"
+    ],
+    "visual_requirements": [
+      "innovation trend maps",
+      "future business model diagrams",
+      "digital transformation visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "innovation_and_disruption_analysis",
+        "estimated_duration": 60,
+        "purpose": "Analyze disruptive innovation and evolving enterprise ecosystems.",
+        "must_contain": [
+          "innovation cycles",
+          "market disruption",
+          "technology influence",
+          "business reinvention"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "future_leadership_models",
+        "estimated_duration": 60,
+        "purpose": "Explore evolving leadership demands and organizational agility.",
+        "must_contain": [
+          "adaptive leadership",
+          "organizational agility",
+          "future workforce trends",
+          "executive evolution"
+        ]
+      },
+      {
+        "lesson_id": "5.3",
+        "lesson_type": "strategic_forecasting",
+        "estimated_duration": 60,
+        "purpose": "Develop future-oriented strategic forecasting and long-term planning capabilities.",
+        "must_contain": [
+          "trend forecasting",
+          "scenario planning",
+          "long-term strategy",
+          "uncertainty management"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate future-oriented enterprise reasoning and innovation analysis.",
+      "must_test": [
+        "innovation interpretation",
+        "future forecasting",
+        "strategic adaptation",
+        "leadership evolution"
+      ],
+      "question_types": [
+        "future_scenarios",
+        "innovation_analysis",
+        "strategic_forecasting"
+      ]
+    }
+  },
+  {
+    "chapter_order": 6,
+    "chapter_type": "mastery_integration_and_executive_assessment",
+    "chapter_title": "Mastery Integration & Executive Strategic Assessment",
+    "duration_minutes": 140,
+    "difficulty": "executive_mastery",
+    "learning_goal": "Integrate all enterprise strategy concepts into executive-level decision-making mastery.",
+    "learning_outcomes": [
+      "Synthesize consulting frameworks into executive reasoning",
+      "Demonstrate enterprise-level strategic analysis",
+      "Apply transformation and optimization methods",
+      "Prepare for executive leadership and consulting roles"
+    ],
+    "must_contain": [
+      "executive synthesis",
+      "consulting integration",
+      "enterprise strategy recap",
+      "leadership mastery roadmap"
+    ],
+    "delivery_methods": [
+      "executive review",
+      "integrated case discussions",
+      "mastery synthesis"
+    ],
+    "visual_requirements": [
+      "integrated enterprise maps",
+      "executive strategy dashboards",
+      "summary architecture diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "6.1",
+        "lesson_type": "enterprise_strategy_integration",
+        "estimated_duration": 70,
+        "purpose": "Connect all strategic frameworks and enterprise methodologies into unified executive reasoning.",
+        "must_contain": [
+          "cross-framework synthesis",
+          "enterprise systems integration",
+          "strategic alignment",
+          "executive insights"
+        ]
+      },
+      {
+        "lesson_id": "6.2",
+        "lesson_type": "executive_growth_and_specialization",
+        "estimated_duration": 70,
+        "purpose": "Guide learners toward executive leadership, consulting, and advanced strategic specialization.",
+        "must_contain": [
+          "consulting career paths",
+          "executive development",
+          "enterprise leadership",
+          "advanced specialization roadmap"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of executive-level strategic problem-solving mastery.",
+      "must_test": [
+        "enterprise reasoning",
+        "consulting analysis",
+        "executive decision-making",
+        "strategic transformation"
+      ],
+      "question_types": [
+        "executive_case_study",
+        "enterprise_strategy_analysis",
+        "complex_decision_reasoning"
+      ],
+      "passing_percentage": 80
+    }
+  }
+]

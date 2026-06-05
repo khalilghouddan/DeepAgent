@@ -1,0 +1,427 @@
+{
+  "id": "Concept_Based_Template_8h",
+  "template_type": "concept_based",
+  "description": "A short theory-focused template designed to introduce foundational concepts and build conceptual understanding for beginners.",
+  "learning_goal": "Help learners understand the main concepts, terminology, principles, and real-world applications of a topic.",
+  "domains": ["ai", "finance", "business", "cybersecurity", "research"],
+  "duration_min": 4,
+  "duration_max": 8,
+  "levels": ["intermediate"],
+  "teaching_styles": ["deep_theory", "analytical_learning", "discussion_based"],
+  "recommended_for": ["detailed_concept_mastery", "theoretical_analysis", "academic_training"]
+}
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "advanced_foundations_and_context",
+    "chapter_title": "Advanced Foundations & Context",
+    "duration_minutes": 75,
+    "difficulty": "intermediate",
+    "learning_goal": "Establish deep foundational understanding, historical context, terminology, and theoretical importance.",
+    "learning_outcomes": [
+      "Explain the evolution of the field",
+      "Understand foundational theories",
+      "Recognize critical terminology",
+      "Analyze the importance of the topic in modern systems"
+    ],
+    "must_contain": [
+      "historical evolution",
+      "academic foundations",
+      "industry relevance",
+      "core terminology",
+      "fundamental theories",
+      "conceptual overview"
+    ],
+    "delivery_methods": [
+      "deep explanation",
+      "guided theoretical analysis",
+      "historical exploration",
+      "discussion-based learning"
+    ],
+    "visual_requirements": [
+      "timeline diagrams",
+      "concept maps",
+      "framework visuals",
+      "terminology relationship charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "topic_introduction",
+        "estimated_duration": 20,
+        "purpose": "Introduce the topic and establish learning direction.",
+        "must_contain": [
+          "course overview",
+          "learning roadmap",
+          "real-world significance",
+          "industry impact"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "historical_and_theoretical_background",
+        "estimated_duration": 30,
+        "purpose": "Provide historical and academic understanding.",
+        "must_contain": [
+          "historical milestones",
+          "foundational theories",
+          "key thinkers or frameworks",
+          "evolution of concepts"
+        ]
+      },
+      {
+        "lesson_id": "1.3",
+        "lesson_type": "core_terminology",
+        "estimated_duration": 25,
+        "purpose": "Teach essential concepts and vocabulary.",
+        "must_contain": [
+          "definitions",
+          "concept explanations",
+          "technical vocabulary",
+          "concept examples"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate foundational and historical understanding.",
+      "must_test": [
+        "terminology recognition",
+        "theory understanding",
+        "historical context",
+        "concept comprehension"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "short_answer",
+        "concept_matching"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "deep_core_concepts",
+    "chapter_title": "Deep Core Concepts",
+    "duration_minutes": 100,
+    "difficulty": "intermediate",
+    "learning_goal": "Teach the major theories, conceptual structures, and deep relationships between core ideas.",
+    "learning_outcomes": [
+      "Explain major concepts in depth",
+      "Understand theoretical structures",
+      "Compare conceptual models",
+      "Interpret relationships between frameworks"
+    ],
+    "must_contain": [
+      "advanced concept explanations",
+      "framework analysis",
+      "theoretical relationships",
+      "system-level understanding",
+      "comparative analysis"
+    ],
+    "delivery_methods": [
+      "deep theory teaching",
+      "analytical breakdowns",
+      "framework comparison",
+      "interactive discussion"
+    ],
+    "visual_requirements": [
+      "framework diagrams",
+      "comparison tables",
+      "workflow charts",
+      "system architecture illustrations"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "concept_decomposition",
+        "estimated_duration": 35,
+        "purpose": "Break down major concepts into understandable parts.",
+        "must_contain": [
+          "step-by-step explanations",
+          "conceptual layers",
+          "examples",
+          "analytical reasoning"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "framework_study",
+        "estimated_duration": 35,
+        "purpose": "Analyze important frameworks and theoretical models.",
+        "must_contain": [
+          "framework structure",
+          "comparisons",
+          "strengths and weaknesses",
+          "real-world mapping"
+        ]
+      },
+      {
+        "lesson_id": "2.3",
+        "lesson_type": "relationship_analysis",
+        "estimated_duration": 30,
+        "purpose": "Explore how concepts influence and connect to each other.",
+        "must_contain": [
+          "dependencies",
+          "relationships",
+          "cross-concept analysis",
+          "system interactions"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Verify deep conceptual understanding.",
+      "must_test": [
+        "framework analysis",
+        "concept comparison",
+        "relationship understanding",
+        "analytical reasoning"
+      ],
+      "question_types": [
+        "scenario_analysis",
+        "concept_comparison",
+        "short_essay"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "applied_analysis_and_case_studies",
+    "chapter_title": "Applied Analysis & Case Studies",
+    "duration_minutes": 110,
+    "difficulty": "intermediate",
+    "learning_goal": "Connect theories to practical environments using analytical case studies and real-world systems.",
+    "learning_outcomes": [
+      "Interpret real-world systems",
+      "Analyze industry applications",
+      "Evaluate implementation strategies",
+      "Identify practical trade-offs"
+    ],
+    "must_contain": [
+      "real-world systems",
+      "industry case studies",
+      "practical workflows",
+      "organizational applications",
+      "implementation analysis"
+    ],
+    "delivery_methods": [
+      "case-study analysis",
+      "industry walkthroughs",
+      "problem-based discussion",
+      "critical analysis"
+    ],
+    "visual_requirements": [
+      "case-study diagrams",
+      "system workflows",
+      "process maps",
+      "organizational charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "industry_case_studies",
+        "estimated_duration": 40,
+        "purpose": "Study how concepts are applied in real organizations and systems.",
+        "must_contain": [
+          "business examples",
+          "technology systems",
+          "implementation details",
+          "operational workflows"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "practical_analysis",
+        "estimated_duration": 35,
+        "purpose": "Develop analytical understanding of practical systems.",
+        "must_contain": [
+          "decision analysis",
+          "problem-solving logic",
+          "performance considerations",
+          "trade-offs"
+        ]
+      },
+      {
+        "lesson_id": "3.3",
+        "lesson_type": "limitations_and_challenges",
+        "estimated_duration": 35,
+        "purpose": "Critically evaluate weaknesses, limitations, and implementation risks.",
+        "must_contain": [
+          "limitations",
+          "risks",
+          "ethical concerns",
+          "scalability challenges"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate practical analytical understanding.",
+      "must_test": [
+        "case interpretation",
+        "problem-solving",
+        "critical thinking",
+        "application reasoning"
+      ],
+      "question_types": [
+        "case_analysis",
+        "scenario_questions",
+        "discussion_prompts"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "research_and_advanced_discussion",
+    "chapter_title": "Research Perspectives & Advanced Discussion",
+    "duration_minutes": 90,
+    "difficulty": "intermediate_to_advanced",
+    "learning_goal": "Develop academic and research-oriented understanding through discussion and analytical exploration.",
+    "learning_outcomes": [
+      "Interpret research perspectives",
+      "Analyze emerging trends",
+      "Understand unresolved challenges",
+      "Discuss future directions"
+    ],
+    "must_contain": [
+      "research perspectives",
+      "emerging trends",
+      "future developments",
+      "open problems",
+      "academic discussions"
+    ],
+    "delivery_methods": [
+      "research discussion",
+      "critical debate",
+      "analytical exploration",
+      "guided reflection"
+    ],
+    "visual_requirements": [
+      "research comparison tables",
+      "trend maps",
+      "future prediction diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "research_landscape",
+        "estimated_duration": 35,
+        "purpose": "Introduce research directions and advanced theoretical perspectives.",
+        "must_contain": [
+          "research topics",
+          "academic viewpoints",
+          "emerging frameworks",
+          "research challenges"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "future_trends",
+        "estimated_duration": 30,
+        "purpose": "Analyze future developments and innovation directions.",
+        "must_contain": [
+          "future applications",
+          "technology evolution",
+          "market trends",
+          "future possibilities"
+        ]
+      },
+      {
+        "lesson_id": "4.3",
+        "lesson_type": "discussion_and_reflection",
+        "estimated_duration": 25,
+        "purpose": "Encourage analytical and reflective thinking.",
+        "must_contain": [
+          "guided discussion",
+          "ethical analysis",
+          "critical reflection",
+          "comparative thinking"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate advanced reasoning and discussion understanding.",
+      "must_test": [
+        "research interpretation",
+        "trend analysis",
+        "critical reasoning",
+        "future thinking"
+      ],
+      "question_types": [
+        "essay_questions",
+        "reflection_prompts",
+        "comparative_analysis"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "integration_and_final_assessment",
+    "chapter_title": "Integration & Final Assessment",
+    "duration_minutes": 45,
+    "difficulty": "review_and_validation",
+    "learning_goal": "Consolidate all learned concepts and validate overall understanding.",
+    "learning_outcomes": [
+      "Integrate concepts into unified understanding",
+      "Demonstrate analytical reasoning",
+      "Apply concepts to complex situations",
+      "Prepare for advanced specialization"
+    ],
+    "must_contain": [
+      "course synthesis",
+      "concept integration",
+      "key takeaways",
+      "future learning roadmap"
+    ],
+    "delivery_methods": [
+      "concept integration",
+      "summary review",
+      "guided synthesis"
+    ],
+    "visual_requirements": [
+      "integrated concept maps",
+      "summary diagrams",
+      "framework overview charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "integrated_summary",
+        "estimated_duration": 20,
+        "purpose": "Reinforce and connect all major ideas.",
+        "must_contain": [
+          "cross-concept integration",
+          "framework recap",
+          "major insights",
+          "system understanding"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "future_learning_path",
+        "estimated_duration": 25,
+        "purpose": "Guide learners toward advanced research or specialization.",
+        "must_contain": [
+          "advanced topics",
+          "research directions",
+          "specialization paths",
+          "recommended next steps"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of theoretical mastery and analytical understanding.",
+      "must_test": [
+        "deep understanding",
+        "concept integration",
+        "critical analysis",
+        "application reasoning"
+      ],
+      "question_types": [
+        "mixed_assessment",
+        "essay_questions",
+        "scenario_analysis",
+        "conceptual_reasoning"
+      ],
+      "passing_percentage": 75
+    }
+  }
+]

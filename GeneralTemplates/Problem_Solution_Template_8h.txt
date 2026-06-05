@@ -1,0 +1,449 @@
+{
+  "id": "Problem_Solution_Template_8h",
+  "template_type": "problem_solution",
+  "description": "An advanced problem-solving template emphasizing critical thinking, scenario simulation, and strategic decision optimization.",
+  "learning_goal": "Help learners identify key business challenges and develop effective, strategic solutions through critical analysis.",
+  "domains": ["business_strategy", "entrepreneurship", "operations", "leadership"],
+  "duration_min": 4,
+  "duration_max": 8,
+  "levels": ["intermediate"],
+  "teaching_styles": ["critical_thinking", "scenario_simulation", "strategic_problem_solving"],
+  "recommended_for": ["complex_problem_analysis", "decision_optimization", "real_world_business_cases"]
+}
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "advanced_problem_solving_foundations",
+    "chapter_title": "Advanced Strategic Problem-Solving Foundations",
+    "duration_minutes": 80,
+    "difficulty": "intermediate",
+    "learning_goal": "Establish advanced strategic thinking foundations and structured approaches for solving complex business problems.",
+    "learning_outcomes": [
+      "Understand advanced business problem-solving methodologies",
+      "Recognize strategic complexity in organizations",
+      "Interpret interconnected business challenges",
+      "Develop analytical thinking foundations"
+    ],
+    "must_contain": [
+      "strategic thinking principles",
+      "complex business challenges",
+      "decision-making frameworks",
+      "systems thinking",
+      "organizational problem structures"
+    ],
+    "delivery_methods": [
+      "guided analysis",
+      "strategic discussion",
+      "business simulations",
+      "framework exploration"
+    ],
+    "visual_requirements": [
+      "decision trees",
+      "systems maps",
+      "problem-analysis frameworks",
+      "organizational diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "complex_business_challenges",
+        "estimated_duration": 35,
+        "purpose": "Introduce learners to complex multi-layered business problems.",
+        "must_contain": [
+          "organizational complexity",
+          "market uncertainty",
+          "multi-department challenges",
+          "real-world examples"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "strategic_problem_solving_models",
+        "estimated_duration": 45,
+        "purpose": "Teach structured strategic frameworks for solving business challenges.",
+        "must_contain": [
+          "problem decomposition",
+          "systems thinking",
+          "strategic frameworks",
+          "decision analysis"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of strategic problem-solving foundations.",
+      "must_test": [
+        "systems thinking",
+        "framework understanding",
+        "problem identification",
+        "strategic reasoning"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "scenario_analysis",
+        "concept_application"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "scenario_analysis_and_root_cause_evaluation",
+    "chapter_title": "Scenario Analysis & Root Cause Evaluation",
+    "duration_minutes": 100,
+    "difficulty": "intermediate",
+    "learning_goal": "Develop the ability to analyze complex scenarios, identify root causes, and evaluate operational and strategic risks.",
+    "learning_outcomes": [
+      "Analyze complex business scenarios",
+      "Identify root causes behind failures or inefficiencies",
+      "Evaluate strategic and operational risks",
+      "Interpret stakeholder and market impact"
+    ],
+    "must_contain": [
+      "root cause analysis",
+      "scenario evaluation",
+      "risk analysis",
+      "stakeholder impact",
+      "business dependencies"
+    ],
+    "delivery_methods": [
+      "scenario workshops",
+      "critical analysis",
+      "guided business reasoning",
+      "interactive case discussions"
+    ],
+    "visual_requirements": [
+      "cause-effect diagrams",
+      "risk matrices",
+      "stakeholder maps",
+      "business workflow charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "advanced_root_cause_analysis",
+        "estimated_duration": 50,
+        "purpose": "Teach learners how to identify underlying strategic and operational causes.",
+        "must_contain": [
+          "surface vs root problems",
+          "system dependencies",
+          "operational bottlenecks",
+          "organizational impact"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "risk_and_stakeholder_analysis",
+        "estimated_duration": 50,
+        "purpose": "Evaluate business risks and stakeholder influence on decisions.",
+        "must_contain": [
+          "risk prioritization",
+          "stakeholder interests",
+          "conflict analysis",
+          "market implications"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Check analytical reasoning and risk evaluation ability.",
+      "must_test": [
+        "root cause understanding",
+        "risk interpretation",
+        "stakeholder reasoning",
+        "scenario evaluation"
+      ],
+      "question_types": [
+        "scenario_questions",
+        "risk_analysis",
+        "short_reasoning"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "strategic_solution_design_and_optimization",
+    "chapter_title": "Strategic Solution Design & Optimization",
+    "duration_minutes": 120,
+    "difficulty": "intermediate",
+    "learning_goal": "Teach learners how to design optimized business solutions and evaluate strategic alternatives.",
+    "learning_outcomes": [
+      "Design strategic business solutions",
+      "Compare strategic alternatives",
+      "Optimize decisions under constraints",
+      "Evaluate implementation feasibility"
+    ],
+    "must_contain": [
+      "solution architecture",
+      "decision optimization",
+      "trade-off analysis",
+      "resource allocation",
+      "implementation planning"
+    ],
+    "delivery_methods": [
+      "solution workshops",
+      "strategic simulations",
+      "comparative analysis",
+      "decision modeling"
+    ],
+    "visual_requirements": [
+      "optimization models",
+      "decision matrices",
+      "implementation roadmaps",
+      "resource allocation charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "solution_generation_and_design",
+        "estimated_duration": 60,
+        "purpose": "Teach methods for designing strategic and operational solutions.",
+        "must_contain": [
+          "creative problem-solving",
+          "strategic alternatives",
+          "business feasibility",
+          "innovation thinking"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "decision_optimization",
+        "estimated_duration": 60,
+        "purpose": "Optimize business decisions using structured evaluation methods.",
+        "must_contain": [
+          "trade-off analysis",
+          "cost-benefit thinking",
+          "resource constraints",
+          "decision prioritization"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate strategic solution design and optimization understanding.",
+      "must_test": [
+        "solution comparison",
+        "optimization reasoning",
+        "implementation analysis",
+        "decision-making ability"
+      ],
+      "question_types": [
+        "case_analysis",
+        "strategy_comparison",
+        "decision_scenarios"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "business_simulation_and_case_analysis",
+    "chapter_title": "Business Simulation & Real-World Case Analysis",
+    "duration_minutes": 110,
+    "difficulty": "intermediate",
+    "learning_goal": "Apply advanced problem-solving methods to realistic business, leadership, and operational scenarios.",
+    "learning_outcomes": [
+      "Interpret complex business situations",
+      "Apply structured strategic frameworks",
+      "Analyze leadership and operational decisions",
+      "Recommend optimized business actions"
+    ],
+    "must_contain": [
+      "business simulations",
+      "leadership scenarios",
+      "operational case studies",
+      "strategic decision-making",
+      "real-world analysis"
+    ],
+    "delivery_methods": [
+      "simulation exercises",
+      "case-study analysis",
+      "leadership discussion",
+      "scenario workshops"
+    ],
+    "visual_requirements": [
+      "business simulation maps",
+      "organizational workflows",
+      "leadership decision diagrams",
+      "process optimization visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "leadership_and_growth_case",
+        "estimated_duration": 55,
+        "purpose": "Analyze strategic leadership and business growth challenges.",
+        "must_contain": [
+          "growth strategy",
+          "leadership decisions",
+          "market pressure",
+          "organizational alignment"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "operations_and_efficiency_case",
+        "estimated_duration": 55,
+        "purpose": "Solve operational and efficiency-related business problems.",
+        "must_contain": [
+          "workflow inefficiencies",
+          "resource management",
+          "process optimization",
+          "performance analysis"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Verify real-world strategic problem-solving ability.",
+      "must_test": [
+        "case interpretation",
+        "strategic reasoning",
+        "leadership analysis",
+        "operational optimization"
+      ],
+      "question_types": [
+        "business_simulation",
+        "case_questions",
+        "scenario_analysis"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "critical_reflection_and_future_strategy",
+    "chapter_title": "Critical Reflection & Future Strategy",
+    "duration_minutes": 50,
+    "difficulty": "intermediate_to_advanced",
+    "learning_goal": "Encourage reflective strategic thinking and prepare learners for advanced business leadership and decision-making.",
+    "learning_outcomes": [
+      "Reflect critically on strategic decisions",
+      "Interpret future business challenges",
+      "Understand evolving leadership demands",
+      "Prepare for advanced strategic analysis"
+    ],
+    "must_contain": [
+      "critical reflection",
+      "future business trends",
+      "strategic leadership",
+      "organizational adaptation"
+    ],
+    "delivery_methods": [
+      "guided reflection",
+      "future scenario analysis",
+      "leadership discussions",
+      "strategic forecasting"
+    ],
+    "visual_requirements": [
+      "future trend charts",
+      "strategy evolution maps",
+      "organizational transformation diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "strategic_reflection",
+        "estimated_duration": 25,
+        "purpose": "Reflect on decision-making quality and business outcomes.",
+        "must_contain": [
+          "decision evaluation",
+          "success and failure analysis",
+          "leadership insights",
+          "strategic lessons"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "future_business_strategy",
+        "estimated_duration": 25,
+        "purpose": "Explore future strategic and operational challenges.",
+        "must_contain": [
+          "future market trends",
+          "business transformation",
+          "innovation pressure",
+          "adaptive leadership"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate reflective and future-oriented strategic thinking.",
+      "must_test": [
+        "critical reasoning",
+        "future analysis",
+        "strategic interpretation",
+        "leadership understanding"
+      ],
+      "question_types": [
+        "reflection_questions",
+        "future_scenarios",
+        "critical_analysis"
+      ]
+    }
+  },
+  {
+    "chapter_order": 6,
+    "chapter_type": "integration_and_final_assessment",
+    "chapter_title": "Integrated Strategic Decision-Making Assessment",
+    "duration_minutes": 40,
+    "difficulty": "review_and_validation",
+    "learning_goal": "Consolidate advanced problem-solving concepts and validate strategic decision-making mastery.",
+    "learning_outcomes": [
+      "Integrate strategic frameworks into practical reasoning",
+      "Demonstrate complex decision-making ability",
+      "Apply optimization methods to scenarios",
+      "Prepare for advanced leadership and strategy training"
+    ],
+    "must_contain": [
+      "integrated framework review",
+      "decision-making recap",
+      "strategy synthesis",
+      "advanced learning roadmap"
+    ],
+    "delivery_methods": [
+      "guided integration",
+      "case synthesis",
+      "reflective discussion"
+    ],
+    "visual_requirements": [
+      "integrated strategy maps",
+      "summary frameworks",
+      "decision-making overviews"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "6.1",
+        "lesson_type": "integrated_case_review",
+        "estimated_duration": 20,
+        "purpose": "Connect all strategic methods and frameworks together.",
+        "must_contain": [
+          "cross-framework integration",
+          "complex scenario reasoning",
+          "key strategic insights"
+        ]
+      },
+      {
+        "lesson_id": "6.2",
+        "lesson_type": "future_learning_path",
+        "estimated_duration": 20,
+        "purpose": "Guide learners toward advanced strategic leadership and enterprise decision-making.",
+        "must_contain": [
+          "advanced strategy topics",
+          "leadership specialization",
+          "enterprise management",
+          "future development roadmap"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of strategic problem-solving mastery.",
+      "must_test": [
+        "integrated reasoning",
+        "decision optimization",
+        "business analysis",
+        "leadership thinking"
+      ],
+      "question_types": [
+        "mixed_assessment",
+        "complex_case_analysis",
+        "strategic_reasoning"
+      ],
+      "passing_percentage": 75
+    }
+  }
+]

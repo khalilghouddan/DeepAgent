@@ -1,0 +1,374 @@
+{
+  "id": "Skill_Based_Template_4h",
+  "template_type": "skill_based",
+  "description": "A hands‑on template designed to develop practical skills through guided practice and step‑by‑step exercises for intermediate learners.",
+  "learning_goal": "Help learners acquire practical abilities and confidence to apply tools and techniques in real-world contexts.",
+  "domains": ["development", "programming", "design", "technical_training"],
+  "duration_min": 2,
+  "duration_max": 4,
+  "levels": ["beginner", "intermediate"],
+  "teaching_styles": ["hands_on", "practice_based", "interactive_learning"],
+  "recommended_for": ["skill_development", "guided_projects", "technical_practice"]
+}
+
+
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "skill_foundations_and_workflow_mastery",
+    "chapter_title": "Skill Foundations & Workflow Mastery",
+    "duration_minutes": 60,
+    "difficulty": "beginner_to_intermediate",
+    "learning_goal": "Build strong foundational understanding of the tool or technical skill and establish correct workflows for intermediate-level practice.",
+    "learning_outcomes": [
+      "Understand core technical workflows",
+      "Use essential tools and features correctly",
+      "Apply structured step-by-step processes",
+      "Avoid common beginner mistakes"
+    ],
+    "must_contain": [
+      "workflow fundamentals",
+      "tool navigation",
+      "core features",
+      "best practices",
+      "setup optimization"
+    ],
+    "delivery_methods": [
+      "guided walkthrough",
+      "interactive demonstrations",
+      "step-by-step tutorials",
+      "live coding or design examples"
+    ],
+    "visual_requirements": [
+      "workflow diagrams",
+      "interface breakdowns",
+      "step progression visuals",
+      "feature highlights"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "advanced_tool_navigation",
+        "estimated_duration": 25,
+        "purpose": "Strengthen understanding of the tool interface and essential navigation patterns.",
+        "must_contain": [
+          "interface structure",
+          "navigation shortcuts",
+          "core menus",
+          "efficiency tips"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "structured_workflow_practice",
+        "estimated_duration": 35,
+        "purpose": "Teach learners how to follow structured workflows for consistent results.",
+        "must_contain": [
+          "step-by-step process",
+          "task sequencing",
+          "workflow optimization",
+          "error prevention"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate workflow understanding and tool mastery.",
+      "must_test": [
+        "workflow execution",
+        "tool navigation",
+        "feature usage"
+      ],
+      "question_types": [
+        "practical_steps",
+        "interface_questions",
+        "workflow_ordering"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "guided_practice_and_intermediate_tasks",
+    "chapter_title": "Guided Practice & Intermediate Skill Tasks",
+    "duration_minutes": 75,
+    "difficulty": "intermediate",
+    "learning_goal": "Develop hands-on proficiency through structured exercises and intermediate-level practical tasks.",
+    "learning_outcomes": [
+      "Perform intermediate-level tasks independently",
+      "Apply structured problem-solving in real scenarios",
+      "Use advanced features of the tool or skill",
+      "Build confidence through repetition and variation"
+    ],
+    "must_contain": [
+      "guided exercises",
+      "intermediate workflows",
+      "feature combinations",
+      "practical tasks",
+      "realistic scenarios"
+    ],
+    "delivery_methods": [
+      "hands-on practice sessions",
+      "interactive labs",
+      "guided challenges",
+      "live demonstrations"
+    ],
+    "visual_requirements": [
+      "exercise breakdowns",
+      "workflow sequences",
+      "task completion examples",
+      "step annotations"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "intermediate_feature_integration",
+        "estimated_duration": 35,
+        "purpose": "Teach learners how to combine multiple features or techniques effectively.",
+        "must_contain": [
+          "feature integration",
+          "multi-step workflows",
+          "practical combinations",
+          "optimization techniques"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "guided_practice_lab",
+        "estimated_duration": 40,
+        "purpose": "Provide structured hands-on practice with increasing complexity.",
+        "must_contain": [
+          "step-by-step lab",
+          "real-world scenario",
+          "problem-solving task",
+          "guided corrections"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate intermediate practical skill execution.",
+      "must_test": [
+        "task completion",
+        "feature integration",
+        "workflow accuracy"
+      ],
+      "question_types": [
+        "practical_tasks",
+        "scenario_execution",
+        "step_ordering"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "real_world_project_application",
+    "chapter_title": "Real-World Project Application",
+    "duration_minutes": 75,
+    "difficulty": "intermediate",
+    "learning_goal": "Enable learners to apply skills in a realistic project environment simulating real-world constraints.",
+    "learning_outcomes": [
+      "Build a complete intermediate-level project",
+      "Apply end-to-end workflow independently",
+      "Solve real-world technical problems",
+      "Optimize outputs for quality and efficiency"
+    ],
+    "must_contain": [
+      "project-based learning",
+      "real-world constraints",
+      "end-to-end workflow",
+      "problem-solving application",
+      "deliverable creation"
+    ],
+    "delivery_methods": [
+      "project-based exercises",
+      "guided implementation",
+      "scenario simulation",
+      "independent practice"
+    ],
+    "visual_requirements": [
+      "project architecture diagrams",
+      "workflow pipelines",
+      "final output examples",
+      "progress tracking visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "project_design_and_planning",
+        "estimated_duration": 35,
+        "purpose": "Plan and structure a complete real-world project before implementation.",
+        "must_contain": [
+          "project requirements",
+          "task breakdown",
+          "tool selection",
+          "workflow planning"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "project_execution",
+        "estimated_duration": 40,
+        "purpose": "Execute the full project using learned skills and tools.",
+        "must_contain": [
+          "step-by-step implementation",
+          "problem-solving",
+          "feature usage",
+          "final output delivery"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate real-world application and project execution ability.",
+      "must_test": [
+        "project completion",
+        "workflow understanding",
+        "problem-solving ability"
+      ],
+      "question_types": [
+        "project_review",
+        "case_based_questions",
+        "execution_tasks"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "optimization_and_skill_refinement",
+    "chapter_title": "Optimization & Skill Refinement",
+    "duration_minutes": 60,
+    "difficulty": "intermediate",
+    "learning_goal": "Improve efficiency, accuracy, and professional-level execution of learned skills.",
+    "learning_outcomes": [
+      "Optimize workflows for efficiency",
+      "Reduce errors in execution",
+      "Apply best practices consistently",
+      "Improve output quality"
+    ],
+    "must_contain": [
+      "performance optimization",
+      "best practices",
+      "advanced techniques",
+      "error correction",
+      "efficiency improvements"
+    ],
+    "delivery_methods": [
+      "guided refinement sessions",
+      "comparative analysis",
+      "performance review",
+      "interactive optimization tasks"
+    ],
+    "visual_requirements": [
+      "before/after comparisons",
+      "workflow efficiency charts",
+      "optimization diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "workflow_optimization",
+        "estimated_duration": 30,
+        "purpose": "Teach how to improve workflow speed and accuracy.",
+        "must_contain": [
+          "efficiency techniques",
+          "shortcut usage",
+          "process simplification",
+          "performance tips"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "error_analysis_and_fixing",
+        "estimated_duration": 30,
+        "purpose": "Identify and fix common mistakes in practical execution.",
+        "must_contain": [
+          "common errors",
+          "debugging techniques",
+          "problem correction",
+          "quality improvement"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Assess optimization and refinement ability.",
+      "must_test": [
+        "workflow efficiency",
+        "error correction",
+        "best practice application"
+      ],
+      "question_types": [
+        "scenario_fixes",
+        "optimization_tasks",
+        "comparison_questions"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "final_assessment_and_skill_mastery",
+    "chapter_title": "Final Assessment & Skill Mastery Validation",
+    "duration_minutes": 30,
+    "difficulty": "intermediate",
+    "learning_goal": "Validate full skill acquisition and ensure readiness for real-world independent application.",
+    "learning_outcomes": [
+      "Demonstrate complete workflow mastery",
+      "Solve complex practical tasks independently",
+      "Apply skills under realistic conditions",
+      "Prepare for advanced skill development"
+    ],
+    "must_contain": [
+      "final project or assessment",
+      "end-to-end workflow test",
+      "real-world simulation",
+      "skill validation"
+    ],
+    "delivery_methods": [
+      "final hands-on assessment",
+      "independent project execution",
+      "simulation-based testing"
+    ],
+    "visual_requirements": [
+      "final output review",
+      "workflow evaluation charts",
+      "assessment checkpoints"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "final_practical_assessment",
+        "estimated_duration": 20,
+        "purpose": "Test full practical skill execution from start to finish.",
+        "must_contain": [
+          "independent task execution",
+          "workflow completion",
+          "accuracy evaluation"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "next_level_skill_path",
+        "estimated_duration": 10,
+        "purpose": "Guide learners toward advanced technical skill development.",
+        "must_contain": [
+          "advanced topics",
+          "specialization paths",
+          "future projects",
+          "learning roadmap"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of intermediate skill mastery.",
+      "must_test": [
+        "full workflow execution",
+        "independent problem-solving",
+        "skill accuracy"
+      ],
+      "question_types": [
+        "final_project",
+        "practical_simulation",
+        "mixed_tasks"
+      ],
+      "passing_percentage": 75
+    }
+  }
+]

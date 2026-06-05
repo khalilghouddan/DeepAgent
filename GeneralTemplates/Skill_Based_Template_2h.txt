@@ -1,0 +1,304 @@
+{
+  "id": "Skill_Based_Template_2h",
+  "template_type": "skill_based",
+  "description": "A hands‑on template designed to develop practical skills through guided practice and step‑by‑step exercises for beginners.",
+  "learning_goal": "Help learners acquire practical abilities and confidence to apply tools and techniques in real‑world contexts.",
+  "domains": ["programming", "design", "software_tools", "technical_skills"],
+  "duration_min": 1,
+  "duration_max": 2,
+  "levels": ["beginner"],
+  "teaching_styles": ["hands_on", "guided_practice", "step_by_step"],
+  "recommended_for": ["basic_skill_training", "tool_introduction", "quick_practice"]
+}
+
+
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "tool_and_skill_foundations",
+    "chapter_title": "Introduction to the Tool & Core Skill Foundations",
+    "duration_minutes": 25,
+    "difficulty": "beginner",
+    "learning_goal": "Introduce learners to the tool or practical skill, its purpose, and the basic workflow needed to begin hands-on practice.",
+    "learning_outcomes": [
+      "Understand the purpose of the tool or skill",
+      "Recognize the main interface or workflow",
+      "Learn essential terminology",
+      "Prepare the environment for practical exercises"
+    ],
+    "must_contain": [
+      "tool overview",
+      "basic terminology",
+      "environment setup",
+      "workflow introduction",
+      "real-world relevance"
+    ],
+    "delivery_methods": [
+      "live demonstration",
+      "guided walkthrough",
+      "interactive explanation",
+      "visual introduction"
+    ],
+    "visual_requirements": [
+      "tool interface screenshots",
+      "workflow diagrams",
+      "setup instructions",
+      "step-by-step visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "tool_introduction",
+        "estimated_duration": 10,
+        "purpose": "Introduce the tool, software, or technical skill and explain its practical value.",
+        "must_contain": [
+          "overview",
+          "common use cases",
+          "industry relevance",
+          "basic examples"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "environment_setup",
+        "estimated_duration": 15,
+        "purpose": "Prepare learners for practical work by configuring the environment and teaching basic navigation.",
+        "must_contain": [
+          "installation or setup",
+          "basic navigation",
+          "essential features",
+          "first interaction"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of foundational tool knowledge.",
+      "must_test": [
+        "tool recognition",
+        "basic terminology",
+        "workflow understanding"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "interface_identification",
+        "true_false"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "guided_skill_practice",
+    "chapter_title": "Guided Skill Practice",
+    "duration_minutes": 35,
+    "difficulty": "beginner",
+    "learning_goal": "Develop practical familiarity with the tool or technique through guided exercises and structured repetition.",
+    "learning_outcomes": [
+      "Perform basic operations independently",
+      "Follow structured workflows",
+      "Use core features correctly",
+      "Gain confidence through practice"
+    ],
+    "must_contain": [
+      "guided exercises",
+      "basic workflows",
+      "feature practice",
+      "step-by-step tasks",
+      "practical repetition"
+    ],
+    "delivery_methods": [
+      "hands-on exercises",
+      "guided tutorials",
+      "practice walkthroughs",
+      "live examples"
+    ],
+    "visual_requirements": [
+      "exercise instructions",
+      "workflow screenshots",
+      "task demonstrations",
+      "feature highlights"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "core_feature_practice",
+        "estimated_duration": 15,
+        "purpose": "Teach learners how to use the most important features or actions.",
+        "must_contain": [
+          "feature usage",
+          "basic commands",
+          "practical actions",
+          "guided examples"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "guided_exercise",
+        "estimated_duration": 20,
+        "purpose": "Apply learned concepts through a complete beginner-friendly exercise.",
+        "must_contain": [
+          "step-by-step activity",
+          "problem-solving guidance",
+          "practice task",
+          "result validation"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Verify ability to perform core practical tasks.",
+      "must_test": [
+        "feature usage",
+        "workflow execution",
+        "basic troubleshooting"
+      ],
+      "question_types": [
+        "practical_steps",
+        "scenario_questions",
+        "task_validation"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "real_world_application",
+    "chapter_title": "Real-World Application & Mini Project",
+    "duration_minutes": 35,
+    "difficulty": "beginner",
+    "learning_goal": "Help learners apply practical skills in realistic beginner-level situations and complete a simple guided project.",
+    "learning_outcomes": [
+      "Apply skills to practical scenarios",
+      "Complete a beginner-friendly project",
+      "Understand real-world workflows",
+      "Build confidence through application"
+    ],
+    "must_contain": [
+      "real-world scenarios",
+      "mini project",
+      "guided application",
+      "workflow execution",
+      "practical outcomes"
+    ],
+    "delivery_methods": [
+      "project-based learning",
+      "guided application",
+      "practice sessions",
+      "scenario walkthroughs"
+    ],
+    "visual_requirements": [
+      "project demonstrations",
+      "workflow maps",
+      "task progression visuals",
+      "final result examples"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "practical_scenario",
+        "estimated_duration": 15,
+        "purpose": "Apply practical skills to a realistic beginner-level use case.",
+        "must_contain": [
+          "real-world example",
+          "guided workflow",
+          "practical problem",
+          "solution execution"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "mini_project",
+        "estimated_duration": 20,
+        "purpose": "Build a small project or complete a realistic practical task.",
+        "must_contain": [
+          "project objective",
+          "step-by-step implementation",
+          "tool usage",
+          "final outcome"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate practical application ability.",
+      "must_test": [
+        "task completion",
+        "workflow understanding",
+        "tool application"
+      ],
+      "question_types": [
+        "project_review",
+        "practical_scenarios",
+        "step_ordering"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "review_and_skill_validation",
+    "chapter_title": "Skill Review & Final Practice Assessment",
+    "duration_minutes": 25,
+    "difficulty": "review",
+    "learning_goal": "Reinforce practical workflows, review key techniques, and validate beginner-level skill competency.",
+    "learning_outcomes": [
+      "Recall core practical techniques",
+      "Demonstrate beginner workflow understanding",
+      "Identify common mistakes",
+      "Prepare for intermediate skill development"
+    ],
+    "must_contain": [
+      "workflow recap",
+      "key techniques review",
+      "common errors",
+      "next learning steps"
+    ],
+    "delivery_methods": [
+      "guided review",
+      "practice recap",
+      "interactive reflection"
+    ],
+    "visual_requirements": [
+      "workflow summaries",
+      "feature recap diagrams",
+      "best-practice visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "practical_review",
+        "estimated_duration": 15,
+        "purpose": "Reinforce the main practical workflows and techniques learned during the course.",
+        "must_contain": [
+          "workflow recap",
+          "important actions",
+          "best practices",
+          "common fixes"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "future_skill_path",
+        "estimated_duration": 10,
+        "purpose": "Guide learners toward more advanced practical skills and projects.",
+        "must_contain": [
+          "intermediate topics",
+          "advanced tools",
+          "practice roadmap",
+          "future projects"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of beginner practical skill understanding.",
+      "must_test": [
+        "workflow execution",
+        "tool familiarity",
+        "basic practical confidence"
+      ],
+      "question_types": [
+        "mixed_practical_assessment",
+        "workflow_questions",
+        "scenario_tasks"
+      ],
+      "passing_percentage": 70
+    }
+  }
+]

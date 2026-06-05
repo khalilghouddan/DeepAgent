@@ -1,0 +1,190 @@
+{
+  "id": "Concept_Based_Template_2h",
+  "template_type": "concept_based",
+  "description": "A short theory-focused template designed to introduce foundational concepts and build conceptual understanding for beginners.",
+  "domains": ["ai", "finance", "business", "cybersecurity", "education"],
+  "duration_min": 1,
+  "duration_max": 2,
+  "levels": ["beginner"],
+  "teaching_styles": ["theory_based", "conceptual_learning", "guided_explanation"],
+  "recommended_for": ["introductions", "basic_foundations", "concept_understanding"],
+  "learning_goal": "Help learners understand the main concepts, terminology, principles, and real-world applications of a topic.",
+
+
+
+  
+  "course_structure": [
+    {
+      "chapter_order": 1,
+      "chapter_type": "introduction_and_foundations",
+      "chapter_title": "Introduction & Foundations",
+      "duration_minutes": 25,
+      "learning_goal": "Introduce the topic, establish relevance, and teach foundational terminology.",
+      "must_contain": [
+        "topic introduction",
+        "why the topic matters",
+        "industry relevance",
+        "basic terminology",
+        "foundational definitions"
+      ],
+      "lessons": [
+        {
+          "lesson_type": "introduction",
+          "purpose": "Create learner interest and explain the course objective.",
+          "must_contain": [
+            "overview",
+            "importance",
+            "real-world examples",
+            "learning outcomes"
+          ]
+        },
+        {
+          "lesson_type": "foundational_concepts",
+          "purpose": "Teach the basic concepts and vocabulary needed for the rest of the course.",
+          "must_contain": [
+            "definitions",
+            "core ideas",
+            "simple analogies",
+            "basic examples"
+          ]
+        }
+      ],
+      "quiz": {
+        "purpose": "Validate foundational understanding.",
+        "must_test": [
+          "basic terminology",
+          "concept recognition",
+          "understanding of importance"
+        ]
+      }
+    },
+    {
+      "chapter_order": 2,
+      "chapter_type": "core_concepts",
+      "chapter_title": "Core Concepts",
+      "duration_minutes": 35,
+      "learning_goal": "Teach the main theories, principles, and conceptual frameworks.",
+      "must_contain": [
+        "main concepts",
+        "theoretical explanations",
+        "frameworks",
+        "relationships between concepts"
+      ],
+      "lessons": [
+        {
+          "lesson_type": "concept_explanation",
+          "purpose": "Explain the central concepts progressively.",
+          "must_contain": [
+            "step-by-step explanations",
+            "examples",
+            "visual thinking",
+            "simplified breakdowns"
+          ]
+        },
+        {
+          "lesson_type": "concept_relationships",
+          "purpose": "Show how concepts interact together.",
+          "must_contain": [
+            "comparisons",
+            "relationships",
+            "dependencies",
+            "real-world mapping"
+          ]
+        }
+      ],
+      "quiz": {
+        "purpose": "Check understanding of core ideas.",
+        "must_test": [
+          "concept application",
+          "concept comparison",
+          "framework understanding"
+        ]
+      }
+    },
+    {
+      "chapter_order": 3,
+      "chapter_type": "applications_and_analysis",
+      "chapter_title": "Applications & Real-World Understanding",
+      "duration_minutes": 35,
+      "learning_goal": "Connect theoretical concepts to practical industry applications.",
+      "must_contain": [
+        "real-world applications",
+        "industry use cases",
+        "benefits and limitations",
+        "practical scenarios"
+      ],
+      "lessons": [
+        {
+          "lesson_type": "industry_examples",
+          "purpose": "Demonstrate how concepts are used in reality.",
+          "must_contain": [
+            "business examples",
+            "technology examples",
+            "real systems",
+            "case-style explanations"
+          ]
+        },
+        {
+          "lesson_type": "analysis_and_discussion",
+          "purpose": "Develop analytical understanding of the topic.",
+          "must_contain": [
+            "advantages",
+            "limitations",
+            "comparisons",
+            "future possibilities"
+          ]
+        }
+      ],
+      "quiz": {
+        "purpose": "Verify practical understanding.",
+        "must_test": [
+          "real-world applications",
+          "scenario understanding",
+          "critical thinking"
+        ]
+      }
+    },
+    {
+      "chapter_order": 4,
+      "chapter_type": "summary_and_final_assessment",
+      "chapter_title": "Summary & Final Assessment",
+      "duration_minutes": 25,
+      "learning_goal": "Consolidate learning and verify overall understanding.",
+      "must_contain": [
+        "course recap",
+        "key takeaways",
+        "important definitions review",
+        "next learning steps"
+      ],
+      "lessons": [
+        {
+          "lesson_type": "course_summary",
+          "purpose": "Reinforce the most important ideas.",
+          "must_contain": [
+            "summary",
+            "concept recap",
+            "important insights"
+          ]
+        },
+        {
+          "lesson_type": "future_learning",
+          "purpose": "Guide learners toward advanced topics.",
+          "must_contain": [
+            "recommended next topics",
+            "learning roadmap",
+            "advanced direction"
+          ]
+        }
+      ],
+      "quiz": {
+        "purpose": "Final validation of course understanding.",
+        "must_test": [
+          "overall comprehension",
+          "concept integration",
+          "basic application ability"
+        ],
+        "passing_percentage": 70
+      }
+    }
+  ]
+}

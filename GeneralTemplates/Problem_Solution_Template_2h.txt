@@ -1,0 +1,299 @@
+{
+  "id": "Problem_Solution_Template_2h",
+  "template_type": "problem_solution",
+  "description": "A scenario-based template designed to build problem-solving skills and strategic thinking through guided analysis.",
+  "learning_goal": "Help learners identify key business challenges and develop effective, strategic solutions through critical analysis.",
+  "domains": ["business", "marketing", "entrepreneurship", "management"],
+  "duration_min": 1,
+  "duration_max": 2,
+  "levels": ["beginner"],
+  "teaching_styles": ["scenario_based", "strategic_thinking", "guided_analysis"],
+  "recommended_for": ["basic_problem_solving", "decision_making", "business_introduction"]
+}
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "problem_solving_foundations",
+    "chapter_title": "Introduction to Business Problem Solving",
+    "duration_minutes": 25,
+    "difficulty": "beginner",
+    "learning_goal": "Introduce learners to business challenges, problem-solving thinking, and structured decision-making.",
+    "learning_outcomes": [
+      "Understand what business problems are",
+      "Recognize common business challenges",
+      "Learn basic problem-solving terminology",
+      "Understand the importance of strategic thinking"
+    ],
+    "must_contain": [
+      "problem-solving introduction",
+      "business challenge examples",
+      "decision-making basics",
+      "strategic thinking fundamentals",
+      "simple terminology"
+    ],
+    "delivery_methods": [
+      "guided explanation",
+      "scenario introduction",
+      "simple business examples",
+      "interactive discussion"
+    ],
+    "visual_requirements": [
+      "problem-solving flowcharts",
+      "decision diagrams",
+      "simple business scenarios"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "introduction_to_business_problems",
+        "estimated_duration": 10,
+        "purpose": "Introduce learners to real-world business challenges.",
+        "must_contain": [
+          "overview of business problems",
+          "why problems occur",
+          "impact on organizations",
+          "basic examples"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "basic_problem_solving_framework",
+        "estimated_duration": 15,
+        "purpose": "Teach a simple structured approach to problem-solving.",
+        "must_contain": [
+          "problem identification",
+          "root cause thinking",
+          "solution brainstorming",
+          "basic decision-making"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of foundational problem-solving concepts.",
+      "must_test": [
+        "problem recognition",
+        "basic terminology",
+        "understanding of decision-making"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "true_false",
+        "scenario_recognition"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "problem_analysis_and_strategic_thinking",
+    "chapter_title": "Problem Analysis & Strategic Thinking",
+    "duration_minutes": 35,
+    "difficulty": "beginner",
+    "learning_goal": "Teach learners how to analyze problems and think strategically about solutions.",
+    "learning_outcomes": [
+      "Analyze simple business situations",
+      "Identify root causes",
+      "Compare possible solutions",
+      "Understand basic strategic thinking"
+    ],
+    "must_contain": [
+      "problem analysis",
+      "root cause identification",
+      "strategic reasoning",
+      "comparison of options",
+      "business thinking"
+    ],
+    "delivery_methods": [
+      "scenario analysis",
+      "guided reasoning",
+      "step-by-step breakdown",
+      "business discussions"
+    ],
+    "visual_requirements": [
+      "cause-and-effect diagrams",
+      "problem trees",
+      "comparison tables"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "root_cause_analysis",
+        "estimated_duration": 15,
+        "purpose": "Teach learners how to identify the real source of a problem.",
+        "must_contain": [
+          "problem symptoms",
+          "root causes",
+          "analysis questions",
+          "real examples"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "solution_comparison",
+        "estimated_duration": 20,
+        "purpose": "Develop strategic thinking by comparing different solution approaches.",
+        "must_contain": [
+          "possible solutions",
+          "advantages and disadvantages",
+          "risk awareness",
+          "decision reasoning"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Check analytical and strategic thinking ability.",
+      "must_test": [
+        "root cause understanding",
+        "solution evaluation",
+        "basic strategic reasoning"
+      ],
+      "question_types": [
+        "scenario_analysis",
+        "multiple_choice",
+        "short_answer"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "guided_business_scenarios",
+    "chapter_title": "Guided Business Scenarios",
+    "duration_minutes": 35,
+    "difficulty": "beginner",
+    "learning_goal": "Apply problem-solving methods to realistic beginner-level business scenarios.",
+    "learning_outcomes": [
+      "Apply structured thinking to scenarios",
+      "Recommend basic solutions",
+      "Interpret business situations",
+      "Understand practical decision-making"
+    ],
+    "must_contain": [
+      "business case examples",
+      "guided scenarios",
+      "practical solutions",
+      "decision-making exercises"
+    ],
+    "delivery_methods": [
+      "case-style walkthroughs",
+      "guided activities",
+      "scenario discussion",
+      "practical analysis"
+    ],
+    "visual_requirements": [
+      "scenario diagrams",
+      "workflow charts",
+      "business process visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "marketing_problem_scenario",
+        "estimated_duration": 15,
+        "purpose": "Analyze a simple marketing or customer-related problem.",
+        "must_contain": [
+          "customer issue",
+          "problem analysis",
+          "possible solutions",
+          "decision explanation"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "business_operations_scenario",
+        "estimated_duration": 20,
+        "purpose": "Solve a beginner-friendly operational or management challenge.",
+        "must_contain": [
+          "operational challenge",
+          "team or workflow issue",
+          "solution planning",
+          "business reasoning"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Verify practical understanding through scenarios.",
+      "must_test": [
+        "scenario interpretation",
+        "problem-solving logic",
+        "decision-making ability"
+      ],
+      "question_types": [
+        "case_questions",
+        "scenario_decisions",
+        "short_analysis"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "summary_and_final_assessment",
+    "chapter_title": "Problem-Solving Review & Final Assessment",
+    "duration_minutes": 25,
+    "difficulty": "review",
+    "learning_goal": "Consolidate business problem-solving concepts and validate beginner-level analytical understanding.",
+    "learning_outcomes": [
+      "Recall the main problem-solving process",
+      "Apply structured analysis",
+      "Recognize effective decision-making approaches",
+      "Prepare for intermediate problem-solving training"
+    ],
+    "must_contain": [
+      "course summary",
+      "key frameworks recap",
+      "strategic thinking review",
+      "next learning guidance"
+    ],
+    "delivery_methods": [
+      "guided recap",
+      "framework summary",
+      "reflective discussion"
+    ],
+    "visual_requirements": [
+      "summary diagrams",
+      "decision-making maps",
+      "framework recap charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "course_review",
+        "estimated_duration": 15,
+        "purpose": "Reinforce the key concepts and methods learned.",
+        "must_contain": [
+          "problem-solving recap",
+          "important insights",
+          "framework review",
+          "business applications"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "future_learning",
+        "estimated_duration": 10,
+        "purpose": "Guide learners toward more advanced strategic thinking topics.",
+        "must_contain": [
+          "intermediate topics",
+          "business strategy introduction",
+          "leadership thinking",
+          "advanced analysis roadmap"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of beginner problem-solving understanding.",
+      "must_test": [
+        "overall comprehension",
+        "scenario reasoning",
+        "basic strategic thinking",
+        "decision-making understanding"
+      ],
+      "question_types": [
+        "mixed_assessment",
+        "scenario_analysis",
+        "multiple_choice"
+      ],
+      "passing_percentage": 70
+    }
+  }
+]

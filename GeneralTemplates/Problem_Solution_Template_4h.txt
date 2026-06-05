@@ -1,0 +1,377 @@
+{
+  "id": "Problem_Solution_Template_4h",
+  "template_type": "problem_solution",
+  "description": "A problem-solving template focused on business strategy, market analysis, and solution design for intermediate learners.",
+  "learning_goal": "Help learners identify key business challenges and develop effective, strategic solutions through critical analysis.",
+  "domains": ["business", "marketing", "startup_strategy", "management"],
+  "duration_min": 2,
+  "duration_max": 4,
+  "levels": ["beginner", "intermediate"],
+  "teaching_styles": ["problem_solving", "case_discussion", "strategic_analysis"],
+  "recommended_for": ["business_strategy", "market_analysis", "solution_design"]
+}
+
+
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "strategic_problem_solving_foundations",
+    "chapter_title": "Foundations of Strategic Problem Solving",
+    "duration_minutes": 45,
+    "difficulty": "beginner",
+    "learning_goal": "Introduce learners to structured business problem-solving, strategic thinking, and market-oriented analysis.",
+    "learning_outcomes": [
+      "Understand the business problem-solving process",
+      "Recognize different types of business challenges",
+      "Learn strategic analysis terminology",
+      "Understand the importance of structured decision-making"
+    ],
+    "must_contain": [
+      "business problem introduction",
+      "strategic thinking fundamentals",
+      "market challenges",
+      "decision-making basics",
+      "business terminology"
+    ],
+    "delivery_methods": [
+      "guided explanation",
+      "business examples",
+      "scenario introduction",
+      "discussion-based learning"
+    ],
+    "visual_requirements": [
+      "problem-solving frameworks",
+      "business challenge diagrams",
+      "decision trees",
+      "strategy maps"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "introduction_to_business_challenges",
+        "estimated_duration": 20,
+        "purpose": "Introduce common business and market problems faced by organizations.",
+        "must_contain": [
+          "market competition",
+          "customer-related issues",
+          "growth challenges",
+          "business examples"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "strategic_problem_solving_framework",
+        "estimated_duration": 25,
+        "purpose": "Teach a structured framework for identifying and solving business problems.",
+        "must_contain": [
+          "problem identification",
+          "root cause analysis",
+          "solution generation",
+          "decision evaluation"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of strategic problem-solving foundations.",
+      "must_test": [
+        "business terminology",
+        "problem identification",
+        "strategic thinking basics"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "scenario_recognition",
+        "true_false"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "market_analysis_and_problem_identification",
+    "chapter_title": "Market Analysis & Problem Identification",
+    "duration_minutes": 60,
+    "difficulty": "beginner_to_intermediate",
+    "learning_goal": "Develop the ability to analyze markets, identify business problems, and evaluate strategic risks.",
+    "learning_outcomes": [
+      "Analyze market conditions",
+      "Identify root causes of business issues",
+      "Understand customer and competitor influence",
+      "Recognize strategic opportunities and threats"
+    ],
+    "must_contain": [
+      "market analysis",
+      "customer analysis",
+      "competitor analysis",
+      "root cause identification",
+      "strategic risks"
+    ],
+    "delivery_methods": [
+      "case discussion",
+      "market scenario analysis",
+      "guided reasoning",
+      "comparative analysis"
+    ],
+    "visual_requirements": [
+      "SWOT diagrams",
+      "market comparison charts",
+      "customer journey maps",
+      "problem trees"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "market_and_customer_analysis",
+        "estimated_duration": 30,
+        "purpose": "Teach learners how to evaluate markets and customer behavior.",
+        "must_contain": [
+          "market trends",
+          "customer needs",
+          "buyer behavior",
+          "business opportunities"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "root_cause_and_risk_analysis",
+        "estimated_duration": 30,
+        "purpose": "Develop analytical thinking to identify root causes and risks.",
+        "must_contain": [
+          "problem symptoms",
+          "root causes",
+          "risk identification",
+          "business impact analysis"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Check market analysis and problem identification ability.",
+      "must_test": [
+        "market interpretation",
+        "customer understanding",
+        "risk awareness",
+        "problem analysis"
+      ],
+      "question_types": [
+        "scenario_analysis",
+        "multiple_choice",
+        "short_answer"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "solution_design_and_strategy_development",
+    "chapter_title": "Solution Design & Strategy Development",
+    "duration_minutes": 70,
+    "difficulty": "intermediate",
+    "learning_goal": "Teach learners how to create strategic solutions and evaluate business decisions.",
+    "learning_outcomes": [
+      "Design practical business solutions",
+      "Compare strategic alternatives",
+      "Evaluate implementation feasibility",
+      "Understand strategic trade-offs"
+    ],
+    "must_contain": [
+      "solution design",
+      "strategic alternatives",
+      "business planning",
+      "decision evaluation",
+      "implementation considerations"
+    ],
+    "delivery_methods": [
+      "solution workshops",
+      "strategy discussions",
+      "guided planning",
+      "comparative analysis"
+    ],
+    "visual_requirements": [
+      "strategy frameworks",
+      "solution comparison tables",
+      "business workflow diagrams",
+      "implementation roadmaps"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "solution_generation",
+        "estimated_duration": 35,
+        "purpose": "Teach structured methods for generating business solutions.",
+        "must_contain": [
+          "brainstorming techniques",
+          "strategic alternatives",
+          "innovation thinking",
+          "business feasibility"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "strategy_evaluation",
+        "estimated_duration": 35,
+        "purpose": "Evaluate and compare possible strategic solutions.",
+        "must_contain": [
+          "advantages and disadvantages",
+          "cost-benefit thinking",
+          "implementation risks",
+          "decision-making criteria"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate strategic solution design understanding.",
+      "must_test": [
+        "solution evaluation",
+        "strategy comparison",
+        "decision-making reasoning",
+        "implementation understanding"
+      ],
+      "question_types": [
+        "case_questions",
+        "strategy_analysis",
+        "short_reasoning"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "business_case_studies_and_application",
+    "chapter_title": "Business Case Studies & Practical Application",
+    "duration_minutes": 45,
+    "difficulty": "intermediate",
+    "learning_goal": "Apply strategic problem-solving methods to realistic business and startup scenarios.",
+    "learning_outcomes": [
+      "Interpret business case studies",
+      "Apply structured problem-solving frameworks",
+      "Recommend strategic solutions",
+      "Analyze practical business decisions"
+    ],
+    "must_contain": [
+      "business case studies",
+      "startup scenarios",
+      "strategic decision-making",
+      "practical business applications"
+    ],
+    "delivery_methods": [
+      "case-study analysis",
+      "guided discussion",
+      "scenario workshops",
+      "practical reasoning"
+    ],
+    "visual_requirements": [
+      "case-study workflows",
+      "startup growth diagrams",
+      "decision matrices"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "startup_growth_case",
+        "estimated_duration": 20,
+        "purpose": "Analyze a startup or business growth challenge.",
+        "must_contain": [
+          "growth problems",
+          "market competition",
+          "strategic options",
+          "decision reasoning"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "management_and_operations_case",
+        "estimated_duration": 25,
+        "purpose": "Solve a business operations or management-related problem.",
+        "must_contain": [
+          "workflow issues",
+          "team challenges",
+          "resource allocation",
+          "solution planning"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Verify practical business problem-solving ability.",
+      "must_test": [
+        "case interpretation",
+        "strategic reasoning",
+        "business analysis",
+        "solution recommendation"
+      ],
+      "question_types": [
+        "scenario_analysis",
+        "case_study_questions",
+        "decision-making_exercises"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "summary_and_final_assessment",
+    "chapter_title": "Strategic Problem-Solving Review & Final Assessment",
+    "duration_minutes": 20,
+    "difficulty": "review",
+    "learning_goal": "Consolidate strategic problem-solving knowledge and validate analytical understanding.",
+    "learning_outcomes": [
+      "Integrate strategic thinking concepts",
+      "Apply structured business analysis",
+      "Demonstrate solution evaluation ability",
+      "Prepare for advanced business strategy learning"
+    ],
+    "must_contain": [
+      "course recap",
+      "framework review",
+      "key insights",
+      "future learning guidance"
+    ],
+    "delivery_methods": [
+      "guided review",
+      "concept integration",
+      "reflective discussion"
+    ],
+    "visual_requirements": [
+      "summary maps",
+      "framework recaps",
+      "strategy comparison charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "course_summary",
+        "estimated_duration": 10,
+        "purpose": "Reinforce major frameworks and strategic methods.",
+        "must_contain": [
+          "strategic recap",
+          "business insights",
+          "framework integration"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "advanced_learning_path",
+        "estimated_duration": 10,
+        "purpose": "Guide learners toward advanced strategic management and business analysis topics.",
+        "must_contain": [
+          "advanced strategy",
+          "business leadership",
+          "market expansion",
+          "future roadmap"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of strategic business problem-solving understanding.",
+      "must_test": [
+        "overall comprehension",
+        "market analysis",
+        "strategic reasoning",
+        "solution evaluation"
+      ],
+      "question_types": [
+        "mixed_assessment",
+        "scenario_analysis",
+        "case_questions"
+      ],
+      "passing_percentage": 70
+    }
+  }
+]

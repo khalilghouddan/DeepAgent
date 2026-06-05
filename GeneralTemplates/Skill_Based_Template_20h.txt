@@ -1,0 +1,383 @@
+{
+  "id": "Skill_Based_Template_20h",
+  "template_type": "skill_based",
+  "description": "An intensive, bootcamp-style template designed for professional skill building and advanced project mastery.",
+  "learning_goal": "Help learners acquire practical abilities and confidence to apply tools and techniques in real‑world contexts.",
+  "domains": ["software_engineering", "full_stack_development", "ai_engineering", "technical_bootcamp"],
+  "duration_min": 10,
+  "duration_max": 20,
+  "levels": ["intermediate", "advanced"],
+  "teaching_styles": ["intensive_hands_on", "project_based", "bootcamp_style"],
+  "recommended_for": ["job_ready_training", "professional_skill_building", "advanced_projects"]
+}
+
+
+
+
+
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "bootcamp_foundations_and_professional_workflow",
+    "chapter_title": "Bootcamp Foundations & Professional Engineering Workflow",
+    "duration_minutes": 240,
+    "difficulty": "intermediate",
+    "learning_goal": "Establish professional-level engineering workflows, system thinking, and bootcamp readiness for intensive project development.",
+    "learning_outcomes": [
+      "Understand professional engineering workflows",
+      "Apply system design thinking",
+      "Set up production-ready environments",
+      "Follow industry-standard development practices"
+    ],
+    "must_contain": [
+      "professional workflow setup",
+      "development lifecycle",
+      "git and collaboration workflow",
+      "system architecture basics",
+      "bootcamp rules and standards"
+    ],
+    "delivery_methods": [
+      "intensive live coding",
+      "guided system setup",
+      "pair programming simulations",
+      "architecture breakdown sessions"
+    ],
+    "visual_requirements": [
+      "CI/CD pipeline diagrams",
+      "system architecture maps",
+      "team workflow charts",
+      "project structure blueprints"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "professional_development_environment_setup",
+        "estimated_duration": 120,
+        "purpose": "Set up a production-ready development environment for full-stack or AI engineering work.",
+        "must_contain": [
+          "tool installation",
+          "IDE setup",
+          "version control setup",
+          "project scaffolding"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "engineering_workflow_mastery",
+        "estimated_duration": 120,
+        "purpose": "Learn professional software engineering workflows used in real teams.",
+        "must_contain": [
+          "git workflow (branching, PRs)",
+          "agile basics",
+          "task management",
+          "code review process"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate readiness for intensive engineering bootcamp.",
+      "must_test": [
+        "workflow understanding",
+        "environment setup",
+        "collaboration basics"
+      ],
+      "question_types": [
+        "setup_tasks",
+        "workflow_scenarios",
+        "multiple_choice"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "core_engineering_skill_sprint",
+    "chapter_title": "Core Engineering Skill Sprint",
+    "duration_minutes": 360,
+    "difficulty": "intermediate_to_advanced",
+    "learning_goal": "Build strong technical foundations through intensive hands-on coding and system implementation exercises.",
+    "learning_outcomes": [
+      "Develop production-level components",
+      "Implement backend and frontend logic",
+      "Build APIs and integrate services",
+      "Debug and optimize real systems"
+    ],
+    "must_contain": [
+      "full-stack development",
+      "API development",
+      "frontend integration",
+      "backend logic",
+      "debugging and testing"
+    ],
+    "delivery_methods": [
+      "live coding sprints",
+      "project-based labs",
+      "debugging workshops",
+      "guided implementation"
+    ],
+    "visual_requirements": [
+      "system flow diagrams",
+      "API request/response flows",
+      "frontend-backend architecture maps",
+      "debugging traces"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "backend_engineering_sprint",
+        "estimated_duration": 180,
+        "purpose": "Build scalable backend services and APIs in a real-world environment.",
+        "must_contain": [
+          "REST API design",
+          "database integration",
+          "authentication",
+          "service architecture"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "frontend_engineering_sprint",
+        "estimated_duration": 180,
+        "purpose": "Develop responsive and dynamic user interfaces integrated with backend systems.",
+        "must_contain": [
+          "UI development",
+          "state management",
+          "API integration",
+          "component architecture"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Assess full-stack engineering capability.",
+      "must_test": [
+        "API design",
+        "frontend integration",
+        "system debugging"
+      ],
+      "question_types": [
+        "coding_tasks",
+        "system_build_scenarios",
+        "debugging_exercises"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "advanced_system_design_and_scalability",
+    "chapter_title": "Advanced System Design & Scalability Engineering",
+    "duration_minutes": 300,
+    "difficulty": "advanced",
+    "learning_goal": "Teach learners how to design scalable, production-grade systems used in enterprise environments.",
+    "learning_outcomes": [
+      "Design scalable system architectures",
+      "Understand distributed systems concepts",
+      "Optimize system performance",
+      "Apply cloud-native principles"
+    ],
+    "must_contain": [
+      "system design principles",
+      "microservices architecture",
+      "scalability strategies",
+      "performance optimization",
+      "cloud infrastructure basics"
+    ],
+    "delivery_methods": [
+      "system design interviews",
+      "architecture workshops",
+      "case study breakdowns",
+      "whiteboard simulations"
+    ],
+    "visual_requirements": [
+      "distributed system diagrams",
+      "microservices maps",
+      "scaling architecture charts",
+      "cloud deployment flows"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "system_design_fundamentals",
+        "estimated_duration": 150,
+        "purpose": "Learn core principles of scalable system design.",
+        "must_contain": [
+          "load balancing",
+          "caching",
+          "databases at scale",
+          "system bottlenecks"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "distributed_systems_and_scalability",
+        "estimated_duration": 150,
+        "purpose": "Understand distributed systems and how large-scale platforms operate.",
+        "must_contain": [
+          "distributed architecture",
+          "fault tolerance",
+          "replication",
+          "consistency models"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate system design and scalability understanding.",
+      "must_test": [
+        "architecture design",
+        "scalability reasoning",
+        "performance optimization"
+      ],
+      "question_types": [
+        "system_design_questions",
+        "architecture_analysis",
+        "scenario_based_design"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "ai_and_advanced_engineering_integration",
+    "chapter_title": "AI Integration & Advanced Engineering Systems",
+    "duration_minutes": 240,
+    "difficulty": "advanced",
+    "learning_goal": "Integrate AI systems into full-stack applications and build intelligent, production-ready solutions.",
+    "learning_outcomes": [
+      "Integrate AI into applications",
+      "Design intelligent systems",
+      "Use APIs and ML models in production",
+      "Build AI-powered features"
+    ],
+    "must_contain": [
+      "AI integration",
+      "ML APIs",
+      "intelligent system design",
+      "data pipelines",
+      "AI-driven features"
+    ],
+    "delivery_methods": [
+      "AI coding labs",
+      "integration workshops",
+      "project-based AI development",
+      "guided implementation"
+    ],
+    "visual_requirements": [
+      "AI pipeline diagrams",
+      "model integration flows",
+      "data processing pipelines",
+      "system AI architecture"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "ai_feature_integration",
+        "estimated_duration": 120,
+        "purpose": "Add AI capabilities to real-world applications.",
+        "must_contain": [
+          "API integration",
+          "model usage",
+          "prompt engineering",
+          "data flow design"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "intelligent_system_architecture",
+        "estimated_duration": 120,
+        "purpose": "Design systems that incorporate AI and automation.",
+        "must_contain": [
+          "AI system design",
+          "automation pipelines",
+          "decision systems",
+          "scalable AI architecture"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate AI engineering integration skills.",
+      "must_test": [
+        "AI integration",
+        "system design",
+        "data flow understanding"
+      ],
+      "question_types": [
+        "implementation_tasks",
+        "architecture_questions",
+        "AI_scenarios"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "capstone_bootcamp_project",
+    "chapter_title": "Capstone Project: Job-Ready Full System Build",
+    "duration_minutes": 360,
+    "difficulty": "advanced",
+    "learning_goal": "Build a complete production-grade system demonstrating full-stack, AI, and system design mastery.",
+    "learning_outcomes": [
+      "Build end-to-end production system",
+      "Integrate full-stack and AI components",
+      "Deploy scalable applications",
+      "Prepare job-ready portfolio project"
+    ],
+    "must_contain": [
+      "capstone project",
+      "deployment pipeline",
+      "full-stack integration",
+      "AI features",
+      "portfolio readiness"
+    ],
+    "delivery_methods": [
+      "independent build sprint",
+      "mentor-style guidance",
+      "milestone reviews",
+      "final deployment simulation"
+    ],
+    "visual_requirements": [
+      "complete system architecture",
+      "deployment pipeline diagrams",
+      "project showcase UI",
+      "production workflow maps"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "capstone_build_execution",
+        "estimated_duration": 240,
+        "purpose": "Build a full production-grade application from scratch.",
+        "must_contain": [
+          "frontend + backend",
+          "AI integration",
+          "database systems",
+          "deployment setup"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "deployment_and_portfolio_preparation",
+        "estimated_duration": 120,
+        "purpose": "Deploy system and prepare professional portfolio presentation.",
+        "must_contain": [
+          "cloud deployment",
+          "CI/CD pipeline",
+          "documentation",
+          "portfolio presentation"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of job-ready engineering skills.",
+      "must_test": [
+        "full system build",
+        "deployment skills",
+        "AI integration",
+        "architecture understanding"
+      ],
+      "question_types": [
+        "final_project_evaluation",
+        "system_design_review",
+        "technical_presentation"
+      ],
+      "passing_percentage": 85
+    }
+  }
+]

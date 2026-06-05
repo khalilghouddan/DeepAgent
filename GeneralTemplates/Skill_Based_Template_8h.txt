@@ -1,0 +1,381 @@
+{
+  "id": "Skill_Based_Template_8h",
+  "template_type": "skill_based",
+  "description": "A hands‑on template designed to develop practical skills through project-based learning and real-world challenges.",
+  "learning_goal": "Help learners acquire practical abilities and confidence to apply tools and techniques in real‑world contexts.",
+  "domains": ["development", "programming", "software_engineering", "design"],
+  "duration_min": 4,
+  "duration_max": 8,
+  "levels": ["intermediate"],
+  "teaching_styles": ["project_based", "hands_on", "challenge_based"],
+  "recommended_for": ["practical_mastery", "portfolio_building", "real_world_skills"]
+}
+
+
+
+
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "advanced_skill_foundations_and_architecture",
+    "chapter_title": "Advanced Skill Foundations & System Architecture",
+    "duration_minutes": 90,
+    "difficulty": "intermediate",
+    "learning_goal": "Build a strong understanding of professional workflows, system architecture, and foundational principles needed for project-based development.",
+    "learning_outcomes": [
+      "Understand system-level thinking",
+      "Design structured workflows for projects",
+      "Apply advanced tool usage concepts",
+      "Recognize architecture patterns in real systems"
+    ],
+    "must_contain": [
+      "system architecture basics",
+      "development workflows",
+      "design principles",
+      "tooling best practices",
+      "project structuring"
+    ],
+    "delivery_methods": [
+      "guided architecture explanation",
+      "interactive diagrams",
+      "live walkthroughs",
+      "conceptual breakdowns"
+    ],
+    "visual_requirements": [
+      "system architecture diagrams",
+      "workflow pipelines",
+      "component interaction maps",
+      "project structure templates"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "system_architecture_fundamentals",
+        "estimated_duration": 45,
+        "purpose": "Introduce how real-world software systems are structured and designed.",
+        "must_contain": [
+          "client-server concepts",
+          "modular design",
+          "system components",
+          "real-world architecture examples"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "project_workflow_design",
+        "estimated_duration": 45,
+        "purpose": "Teach how to structure a development workflow for scalable projects.",
+        "must_contain": [
+          "task planning",
+          "development lifecycle",
+          "version control workflow",
+          "project organization"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of system design and workflow planning.",
+      "must_test": [
+        "architecture understanding",
+        "workflow design",
+        "system thinking"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "diagram_interpretation",
+        "short_answer"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "project_based_development_fundamentals",
+    "chapter_title": "Project-Based Development Fundamentals",
+    "duration_minutes": 120,
+    "difficulty": "intermediate",
+    "learning_goal": "Develop core development skills through structured project-based learning and real implementation tasks.",
+    "learning_outcomes": [
+      "Build functional software components",
+      "Apply structured coding practices",
+      "Work with real project constraints",
+      "Develop debugging and iteration skills"
+    ],
+    "must_contain": [
+      "hands-on coding",
+      "project structure",
+      "feature implementation",
+      "debugging techniques",
+      "iterative development"
+    ],
+    "delivery_methods": [
+      "guided coding sessions",
+      "project implementation",
+      "live debugging",
+      "step-by-step building"
+    ],
+    "visual_requirements": [
+      "code structure diagrams",
+      "project folder hierarchy",
+      "feature flowcharts",
+      "debugging walkthrough visuals"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "core_feature_development",
+        "estimated_duration": 60,
+        "purpose": "Build core functional features of a project step-by-step.",
+        "must_contain": [
+          "feature design",
+          "implementation steps",
+          "coding logic",
+          "testing basics"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "debugging_and_iteration",
+        "estimated_duration": 60,
+        "purpose": "Teach learners how to identify and fix issues during development.",
+        "must_contain": [
+          "bug identification",
+          "error handling",
+          "iteration cycles",
+          "code improvement"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate practical coding and project-building ability.",
+      "must_test": [
+        "feature implementation",
+        "debugging skills",
+        "code understanding"
+      ],
+      "question_types": [
+        "coding_tasks",
+        "debugging_scenarios",
+        "project_steps"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "real_world_project_building",
+    "chapter_title": "Real-World Project Building",
+    "duration_minutes": 120,
+    "difficulty": "intermediate",
+    "learning_goal": "Apply learned skills to build a complete real-world project with realistic constraints and requirements.",
+    "learning_outcomes": [
+      "Develop a full end-to-end project",
+      "Integrate multiple features together",
+      "Work under realistic constraints",
+      "Deliver a functional application"
+    ],
+    "must_contain": [
+      "end-to-end project",
+      "feature integration",
+      "real-world constraints",
+      "deployment mindset",
+      "functional output"
+    ],
+    "delivery_methods": [
+      "project-based learning",
+      "hands-on development",
+      "guided milestones",
+      "incremental builds"
+    ],
+    "visual_requirements": [
+      "project architecture diagrams",
+      "feature integration flow",
+      "final application preview",
+      "system interaction maps"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "project_planning_and_design",
+        "estimated_duration": 50,
+        "purpose": "Plan and design a complete real-world software project.",
+        "must_contain": [
+          "requirements definition",
+          "architecture design",
+          "feature breakdown",
+          "technology selection"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "project_implementation",
+        "estimated_duration": 70,
+        "purpose": "Build the full project step-by-step from scratch.",
+        "must_contain": [
+          "coding implementation",
+          "feature integration",
+          "testing",
+          "final output creation"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate full project development ability.",
+      "must_test": [
+        "project completion",
+        "feature integration",
+        "system understanding"
+      ],
+      "question_types": [
+        "project_review",
+        "practical_build_tasks",
+        "architecture_questions"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "optimization_and_professional_practices",
+    "chapter_title": "Optimization & Professional Development Practices",
+    "duration_minutes": 90,
+    "difficulty": "intermediate",
+    "learning_goal": "Improve code quality, performance, and professional development practices used in real-world engineering teams.",
+    "learning_outcomes": [
+      "Optimize performance and structure",
+      "Apply clean code principles",
+      "Improve maintainability",
+      "Follow professional development workflows"
+    ],
+    "must_contain": [
+      "code optimization",
+      "clean architecture",
+      "best practices",
+      "refactoring",
+      "performance improvement"
+    ],
+    "delivery_methods": [
+      "code review sessions",
+      "optimization workshops",
+      "refactoring exercises",
+      "best practice demonstrations"
+    ],
+    "visual_requirements": [
+      "before/after code comparisons",
+      "performance charts",
+      "architecture improvements",
+      "refactoring maps"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "code_optimization",
+        "estimated_duration": 45,
+        "purpose": "Improve efficiency and performance of existing project code.",
+        "must_contain": [
+          "performance tuning",
+          "efficiency improvements",
+          "code simplification",
+          "resource optimization"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "clean_code_and_refactoring",
+        "estimated_duration": 45,
+        "purpose": "Apply clean code principles and refactor project structure.",
+        "must_contain": [
+          "readability improvement",
+          "code organization",
+          "refactoring techniques",
+          "best practices"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Assess optimization and professional coding practices.",
+      "must_test": [
+        "code quality",
+        "optimization techniques",
+        "refactoring understanding"
+      ],
+      "question_types": [
+        "code_review_tasks",
+        "optimization_scenarios",
+        "refactoring_questions"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "capstone_project_and_portfolio_building",
+    "chapter_title": "Capstone Project & Portfolio Building",
+    "duration_minutes": 110,
+    "difficulty": "intermediate",
+    "learning_goal": "Enable learners to build a complete portfolio-ready project demonstrating real-world technical skills.",
+    "learning_outcomes": [
+      "Build a portfolio-ready project",
+      "Demonstrate end-to-end development ability",
+      "Showcase technical skills professionally",
+      "Prepare for real-world job applications"
+    ],
+    "must_contain": [
+      "capstone project",
+      "portfolio development",
+      "professional presentation",
+      "real-world use case",
+      "deployment readiness"
+    ],
+    "delivery_methods": [
+      "independent project work",
+      "guided checkpoints",
+      "portfolio review",
+      "final presentation simulation"
+    ],
+    "visual_requirements": [
+      "portfolio showcase layout",
+      "final system architecture",
+      "project demonstration visuals",
+      "deployment flow"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "capstone_project_execution",
+        "estimated_duration": 70,
+        "purpose": "Build a complete advanced project from scratch.",
+        "must_contain": [
+          "full development lifecycle",
+          "feature integration",
+          "system design",
+          "final implementation"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "portfolio_and_presentation",
+        "estimated_duration": 40,
+        "purpose": "Prepare and present the project as a professional portfolio piece.",
+        "must_contain": [
+          "project documentation",
+          "presentation structure",
+          "technical explanation",
+          "showcase preparation"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of professional-level project development skills.",
+      "must_test": [
+        "project completeness",
+        "technical execution",
+        "portfolio readiness"
+      ],
+      "question_types": [
+        "final_project_review",
+        "technical_presentation",
+        "system_analysis"
+      ],
+      "passing_percentage": 80
+    }
+  }
+]

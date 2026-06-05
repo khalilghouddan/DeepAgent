@@ -1,0 +1,511 @@
+{
+  "id": "Concept_Based_Template_20h",
+  "template_type": "concept_based",
+  "description": "A short theory-focused template designed to introduce foundational concepts and build conceptual understanding for beginners.",
+  "learning_goal": "Help learners understand the main concepts, terminology, principles, and real-world applications of a topic.",
+  "domains": ["ai", "finance", "business", "cybersecurity", "higher_education"],
+  "duration_min": 10,
+  "duration_max": 20,
+  "levels": ["intermediate", "advanced"],
+  "teaching_styles": ["advanced_theory", "research_based", "critical_analysis"],
+  "recommended_for": ["professional_theoretical_training", "deep_academic_learning", "expert_knowledge"]
+}
+
+
+"course_structure": [
+  {
+    "chapter_order": 1,
+    "chapter_type": "advanced_foundations_and_historical_context",
+    "chapter_title": "Advanced Foundations & Historical Context",
+    "duration_minutes": 180,
+    "difficulty": "intermediate",
+    "learning_goal": "Establish rigorous foundational understanding through historical evolution, theoretical origins, and conceptual frameworks.",
+    "learning_outcomes": [
+      "Explain the historical evolution of the field",
+      "Interpret foundational theories",
+      "Understand core terminology and principles",
+      "Analyze the importance of the domain in modern systems"
+    ],
+    "must_contain": [
+      "historical context",
+      "academic foundations",
+      "terminology",
+      "core principles",
+      "evolution of theories",
+      "industry relevance"
+    ],
+    "delivery_methods": [
+      "advanced lectures",
+      "guided theory analysis",
+      "academic discussion",
+      "framework exploration"
+    ],
+    "visual_requirements": [
+      "historical timelines",
+      "conceptual maps",
+      "framework diagrams",
+      "theory relationship charts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "1.1",
+        "lesson_type": "discipline_introduction",
+        "estimated_duration": 45,
+        "purpose": "Introduce the domain and establish the intellectual scope of the course.",
+        "must_contain": [
+          "discipline overview",
+          "importance of the field",
+          "industry and academic impact",
+          "learning roadmap"
+        ]
+      },
+      {
+        "lesson_id": "1.2",
+        "lesson_type": "historical_evolution",
+        "estimated_duration": 70,
+        "purpose": "Analyze the historical development of theories and systems.",
+        "must_contain": [
+          "historical milestones",
+          "major innovations",
+          "key theoretical transitions",
+          "evolution of methodologies"
+        ]
+      },
+      {
+        "lesson_id": "1.3",
+        "lesson_type": "foundational_theories",
+        "estimated_duration": 65,
+        "purpose": "Develop strong understanding of the field’s foundational concepts.",
+        "must_contain": [
+          "definitions",
+          "core principles",
+          "fundamental frameworks",
+          "concept examples"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate understanding of foundational and historical knowledge.",
+      "must_test": [
+        "historical understanding",
+        "terminology",
+        "theoretical concepts",
+        "framework recognition"
+      ],
+      "question_types": [
+        "multiple_choice",
+        "short_answer",
+        "concept_mapping"
+      ]
+    }
+  },
+  {
+    "chapter_order": 2,
+    "chapter_type": "deep_theoretical_frameworks",
+    "chapter_title": "Deep Theoretical Frameworks",
+    "duration_minutes": 240,
+    "difficulty": "intermediate_to_advanced",
+    "learning_goal": "Teach advanced conceptual frameworks, theoretical models, and structural relationships.",
+    "learning_outcomes": [
+      "Analyze major theories deeply",
+      "Compare competing frameworks",
+      "Interpret structural relationships",
+      "Understand system-level conceptual models"
+    ],
+    "must_contain": [
+      "advanced frameworks",
+      "concept decomposition",
+      "comparative analysis",
+      "theoretical relationships",
+      "systems thinking"
+    ],
+    "delivery_methods": [
+      "deep theoretical teaching",
+      "comparative analysis",
+      "analytical discussion",
+      "framework breakdown"
+    ],
+    "visual_requirements": [
+      "framework comparison tables",
+      "system diagrams",
+      "relationship maps",
+      "workflow visualizations"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "2.1",
+        "lesson_type": "advanced_concept_analysis",
+        "estimated_duration": 80,
+        "purpose": "Break down and analyze advanced conceptual structures.",
+        "must_contain": [
+          "layered explanations",
+          "theoretical depth",
+          "examples",
+          "conceptual reasoning"
+        ]
+      },
+      {
+        "lesson_id": "2.2",
+        "lesson_type": "framework_comparison",
+        "estimated_duration": 80,
+        "purpose": "Compare major frameworks and schools of thought.",
+        "must_contain": [
+          "framework comparison",
+          "advantages and disadvantages",
+          "philosophical differences",
+          "application domains"
+        ]
+      },
+      {
+        "lesson_id": "2.3",
+        "lesson_type": "system_relationships",
+        "estimated_duration": 80,
+        "purpose": "Understand relationships between systems, theories, and concepts.",
+        "must_contain": [
+          "cross-framework interactions",
+          "dependencies",
+          "integrated systems",
+          "multi-layered structures"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate deep theoretical understanding.",
+      "must_test": [
+        "framework analysis",
+        "concept comparison",
+        "structural reasoning",
+        "system interpretation"
+      ],
+      "question_types": [
+        "essay_questions",
+        "scenario_analysis",
+        "comparative_reasoning"
+      ]
+    }
+  },
+  {
+    "chapter_order": 3,
+    "chapter_type": "research_methodologies_and_academic_analysis",
+    "chapter_title": "Research Methodologies & Academic Analysis",
+    "duration_minutes": 210,
+    "difficulty": "advanced",
+    "learning_goal": "Develop academic reasoning and research-oriented understanding of the field.",
+    "learning_outcomes": [
+      "Understand research methodologies",
+      "Interpret academic work",
+      "Analyze theoretical evidence",
+      "Critically evaluate research approaches"
+    ],
+    "must_contain": [
+      "research methodologies",
+      "academic analysis",
+      "evidence interpretation",
+      "critical evaluation",
+      "scholarly frameworks"
+    ],
+    "delivery_methods": [
+      "research discussions",
+      "paper analysis",
+      "critical evaluation",
+      "methodology exploration"
+    ],
+    "visual_requirements": [
+      "research process diagrams",
+      "methodology comparisons",
+      "evidence flowcharts"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "3.1",
+        "lesson_type": "research_foundations",
+        "estimated_duration": 70,
+        "purpose": "Introduce research methodologies and analytical approaches.",
+        "must_contain": [
+          "qualitative methods",
+          "quantitative methods",
+          "evaluation strategies",
+          "research structures"
+        ]
+      },
+      {
+        "lesson_id": "3.2",
+        "lesson_type": "academic_paper_analysis",
+        "estimated_duration": 70,
+        "purpose": "Teach learners how to interpret and analyze academic literature.",
+        "must_contain": [
+          "paper structure",
+          "research interpretation",
+          "critical reading",
+          "evidence analysis"
+        ]
+      },
+      {
+        "lesson_id": "3.3",
+        "lesson_type": "critical_research_evaluation",
+        "estimated_duration": 70,
+        "purpose": "Develop critical reasoning toward theories and evidence.",
+        "must_contain": [
+          "bias identification",
+          "limitations",
+          "methodological weaknesses",
+          "validity analysis"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Validate academic reasoning and research understanding.",
+      "must_test": [
+        "research interpretation",
+        "critical analysis",
+        "methodology understanding",
+        "evidence evaluation"
+      ],
+      "question_types": [
+        "research_analysis",
+        "essay_questions",
+        "critical_reflection"
+      ]
+    }
+  },
+  {
+    "chapter_order": 4,
+    "chapter_type": "advanced_applications_and_enterprise_systems",
+    "chapter_title": "Advanced Applications & Enterprise Systems",
+    "duration_minutes": 240,
+    "difficulty": "advanced",
+    "learning_goal": "Analyze how theoretical frameworks are implemented in complex real-world systems and organizations.",
+    "learning_outcomes": [
+      "Interpret enterprise implementations",
+      "Analyze organizational systems",
+      "Evaluate scalability and complexity",
+      "Understand operational trade-offs"
+    ],
+    "must_contain": [
+      "enterprise systems",
+      "organizational workflows",
+      "real-world implementations",
+      "scalability analysis",
+      "governance and operational concerns"
+    ],
+    "delivery_methods": [
+      "enterprise case studies",
+      "system walkthroughs",
+      "organizational analysis",
+      "critical discussion"
+    ],
+    "visual_requirements": [
+      "enterprise architecture diagrams",
+      "workflow maps",
+      "process diagrams",
+      "organizational structures"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "4.1",
+        "lesson_type": "enterprise_case_studies",
+        "estimated_duration": 80,
+        "purpose": "Study advanced real-world organizational systems.",
+        "must_contain": [
+          "enterprise examples",
+          "operational structures",
+          "implementation workflows",
+          "business integration"
+        ]
+      },
+      {
+        "lesson_id": "4.2",
+        "lesson_type": "scalability_and_complexity",
+        "estimated_duration": 80,
+        "purpose": "Analyze challenges in scaling systems and frameworks.",
+        "must_contain": [
+          "scalability issues",
+          "resource constraints",
+          "complexity management",
+          "optimization strategies"
+        ]
+      },
+      {
+        "lesson_id": "4.3",
+        "lesson_type": "governance_and_risk_analysis",
+        "estimated_duration": 80,
+        "purpose": "Understand governance, ethics, regulation, and operational risk.",
+        "must_contain": [
+          "governance structures",
+          "compliance concerns",
+          "ethical analysis",
+          "risk management"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Assess understanding of enterprise-level applications.",
+      "must_test": [
+        "system analysis",
+        "organizational reasoning",
+        "scalability evaluation",
+        "governance understanding"
+      ],
+      "question_types": [
+        "enterprise_scenarios",
+        "case_analysis",
+        "system_reasoning"
+      ]
+    }
+  },
+  {
+    "chapter_order": 5,
+    "chapter_type": "future_directions_and_emerging_research",
+    "chapter_title": "Future Directions & Emerging Research",
+    "duration_minutes": 180,
+    "difficulty": "advanced",
+    "learning_goal": "Explore emerging research areas, unresolved problems, and future developments.",
+    "learning_outcomes": [
+      "Interpret future trends",
+      "Analyze emerging theories",
+      "Understand unresolved research problems",
+      "Evaluate future implications"
+    ],
+    "must_contain": [
+      "future trends",
+      "emerging research",
+      "innovation analysis",
+      "open challenges",
+      "next-generation systems"
+    ],
+    "delivery_methods": [
+      "research discussion",
+      "future analysis",
+      "innovation workshops",
+      "critical forecasting"
+    ],
+    "visual_requirements": [
+      "trend maps",
+      "innovation timelines",
+      "future architecture diagrams"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "5.1",
+        "lesson_type": "emerging_theories",
+        "estimated_duration": 60,
+        "purpose": "Analyze new frameworks and theoretical developments.",
+        "must_contain": [
+          "new paradigms",
+          "emerging frameworks",
+          "research breakthroughs",
+          "future methodologies"
+        ]
+      },
+      {
+        "lesson_id": "5.2",
+        "lesson_type": "future_systems",
+        "estimated_duration": 60,
+        "purpose": "Study possible future systems and architectures.",
+        "must_contain": [
+          "future applications",
+          "advanced systems",
+          "innovation directions",
+          "market evolution"
+        ]
+      },
+      {
+        "lesson_id": "5.3",
+        "lesson_type": "open_research_problems",
+        "estimated_duration": 60,
+        "purpose": "Explore unresolved problems and research opportunities.",
+        "must_contain": [
+          "unsolved challenges",
+          "research gaps",
+          "future opportunities",
+          "critical unknowns"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Evaluate advanced analytical and future-oriented reasoning.",
+      "must_test": [
+        "trend interpretation",
+        "research analysis",
+        "future reasoning",
+        "innovation understanding"
+      ],
+      "question_types": [
+        "research_discussion",
+        "critical_essays",
+        "future_scenarios"
+      ]
+    }
+  },
+  {
+    "chapter_order": 6,
+    "chapter_type": "mastery_integration_and_final_assessment",
+    "chapter_title": "Mastery Integration & Final Assessment",
+    "duration_minutes": 150,
+    "difficulty": "expert_validation",
+    "learning_goal": "Integrate all concepts into a coherent expert-level understanding and validate mastery.",
+    "learning_outcomes": [
+      "Synthesize advanced concepts",
+      "Demonstrate critical reasoning",
+      "Apply theories to complex systems",
+      "Prepare for specialization or research"
+    ],
+    "must_contain": [
+      "integrated understanding",
+      "advanced synthesis",
+      "conceptual mastery",
+      "future specialization roadmap"
+    ],
+    "delivery_methods": [
+      "mastery discussions",
+      "integrated review",
+      "expert-level reasoning"
+    ],
+    "visual_requirements": [
+      "integrated concept maps",
+      "system-wide diagrams",
+      "advanced framework summaries"
+    ],
+    "lessons": [
+      {
+        "lesson_id": "6.1",
+        "lesson_type": "integrated_mastery_review",
+        "estimated_duration": 75,
+        "purpose": "Connect all theories and systems into a unified understanding.",
+        "must_contain": [
+          "cross-framework integration",
+          "system synthesis",
+          "advanced conceptual relationships",
+          "key insights"
+        ]
+      },
+      {
+        "lesson_id": "6.2",
+        "lesson_type": "specialization_and_next_steps",
+        "estimated_duration": 75,
+        "purpose": "Guide learners toward advanced specialization and professional growth.",
+        "must_contain": [
+          "specialization paths",
+          "research directions",
+          "career applications",
+          "advanced learning roadmap"
+        ]
+      }
+    ],
+    "quiz": {
+      "purpose": "Final validation of expert-level conceptual mastery.",
+      "must_test": [
+        "advanced reasoning",
+        "system integration",
+        "critical analysis",
+        "research understanding"
+      ],
+      "question_types": [
+        "comprehensive_essay",
+        "complex_case_analysis",
+        "conceptual_reasoning"
+      ],
+      "passing_percentage": 80
+    }
+  }
+]
