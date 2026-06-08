@@ -6,7 +6,7 @@ import logging
 
 import httpx
 
-from .config import (
+from .searxng_config import (
     build_candidate_searxng_urls,
     searxng_headers,
     searxng_params,

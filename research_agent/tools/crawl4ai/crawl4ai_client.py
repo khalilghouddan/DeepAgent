@@ -8,13 +8,13 @@ from urllib.parse import urlsplit
 
 import httpx
 
-from .config import (
+from .crawl4ai_config import (
     build_candidate_crawl4ai_urls,
     crawl4ai_headers,
     crawl4ai_scrape_paths,
     crawl4ai_timeout,
 )
-from .response import (
+from .crawl4ai_response import (
     crawl4ai_task_id,
     extract_crawl4ai_markdown,
     extract_crawl4ai_markdown_by_url,

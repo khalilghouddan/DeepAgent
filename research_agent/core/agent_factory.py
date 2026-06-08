@@ -16,7 +16,7 @@ from research_agent.tools import (
     searxng_search,
     think_tool,
 )
-from .language import build_language_instruction
+from .language_config import build_language_instruction
 from .model_builder import build_chat_model
 from .subagents import build_research_sub_agent
 

@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 from api.schemas import model_dump
 
-from .execution import execute_research
+from .research_executor import execute_research
 
 logger = logging.getLogger(__name__)
 

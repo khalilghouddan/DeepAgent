@@ -7,8 +7,8 @@ import logging
 import httpx
 from markdownify import markdownify
 
-from .client import fetch_webpage_content_with_crawl4ai
-from .config import build_candidate_crawl4ai_urls
+from .crawl4ai_client import fetch_webpage_content_with_crawl4ai
+from .crawl4ai_config import build_candidate_crawl4ai_urls
 
 logger = logging.getLogger(__name__)
 

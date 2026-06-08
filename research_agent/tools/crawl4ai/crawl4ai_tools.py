@@ -8,14 +8,14 @@ import logging
 from langchain_core.tools import InjectedToolArg, tool
 from typing_extensions import Annotated
 
-from research_agent.tools.trace import record_research_trace
+from research_agent.tools.research_trace import record_research_trace
 
-from .client import (
+from .crawl4ai_client import (
     fetch_webpage_content_with_crawl4ai,
     fetch_webpage_contents_with_crawl4ai,
 )
-from .config import build_candidate_crawl4ai_urls, crawl4ai_batch_size
-from .urls import normalize_url_list
+from .crawl4ai_config import build_candidate_crawl4ai_urls, crawl4ai_batch_size
+from .crawl4ai_urls import normalize_url_list
 
 logger = logging.getLogger(__name__)
 

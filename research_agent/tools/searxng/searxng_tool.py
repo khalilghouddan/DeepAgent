@@ -7,11 +7,11 @@ import logging
 from langchain_core.tools import InjectedToolArg, tool
 from typing_extensions import Annotated
 
-from research_agent.tools.trace import record_research_trace
+from research_agent.tools.research_trace import record_research_trace
 
-from .client import searxng_search_request
-from .config import resolve_max_results
-from .formatting import format_source_summary, format_tool_response, source_rows_from_results
+from .searxng_client import searxng_search_request
+from .searxng_config import resolve_max_results
+from .searxng_formatting import format_source_summary, format_tool_response, source_rows_from_results
 
 logger = logging.getLogger(__name__)
 

@@ -9,8 +9,8 @@ import time
 from api.errors import ResearchExecutionError, ResearchTimeoutError
 from api.schemas import ResearchRequest, ResearchResponse, model_dump
 
-from .env import research_timeout_seconds
-from .worker import multiprocessing_context, research_worker
+from .env_config import research_timeout_seconds
+from .subprocess_worker import multiprocessing_context, research_worker
 
 
 def _terminate_process(
